@@ -1,0 +1,12 @@
+{
+  "company": "netzence",
+  "name": "CloseCarbon",
+  "role": "Smart contracts, deployment and Python backend integration",
+  "stack": "Solidity · Hardhat · OpenZeppelin upgradeable proxies · Python · Optimism",
+  "order": 1,
+  "diagrams": [
+    { "file": "netzence/closecarbon/01", "title": "From facility data to CloseCarbonReductionToken (CCRT)" },
+    { "file": "netzence/closecarbon/02", "title": "The contract system" },
+    { "file": "netzence/closecarbon/03", "title": "Energy efficiency and energy sharing" }
+  ]
+}

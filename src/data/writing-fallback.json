@@ -1,0 +1,269 @@
+[
+  {
+    "title": "Building eth-unit-converter: Every Wrong Turn in My Second Rust Project",
+    "url": "https://favoriteblockchain.medium.com/building-eth-unit-converter-every-wrong-turn-in-my-second-rust-project-f152df687e3c",
+    "date": "2026-09-29",
+    "platform": "Medium",
+    "excerpt": "P1 in my fifty project Rust list is an Ethereum unit converter. A small command line tool that takes an amount, a source unit, and a target unit, and converts between…",
+    "categories": [
+      "rust-programming-language",
+      "rustlang",
+      "rust-for-solidity-dev",
+      "rust",
+      "rust-programming"
+    ]
+  },
+  {
+    "title": "Building hello-blockchain-cli: Every Wrong Turn in One of My First Rust Projects",
+    "url": "https://favoriteblockchain.medium.com/building-hello-blockchain-cli-every-wrong-turn-in-one-of-my-first-rust-projects-3c563f2d9cbe",
+    "date": "2026-08-08",
+    "platform": "Medium",
+    "excerpt": "I’m working through a list of fifty small Rust projects, numbered P0 to P49, as part of a longer plan to move from Solidity into systems level blockchain work. This is…",
+    "categories": [
+      "rust",
+      "learning-rust",
+      "programming",
+      "software-development",
+      "blockchain"
+    ]
+  },
+  {
+    "title": "Rust for Solidity Developers-Setting Up Your Rust Dev Environment… Article 02",
+    "url": "https://favoriteblockchain.medium.com/rust-for-solidity-developers-setting-up-your-rust-dev-environment-article-02-4d169ebd2598",
+    "date": "2026-07-22",
+    "platform": "Medium",
+    "excerpt": "Installing Rust, understanding the toolchain, and running your first program. This article is long overdue. And I hope the next one does not take as much time as this…",
+    "categories": [
+      "rustlang",
+      "rust-programming-language",
+      "rust-for-solidity-dev",
+      "rust",
+      "rust-installation"
+    ]
+  },
+  {
+    "title": "Anatomy of a Preventable Drain: What the Wasabi Protocol Exploit Teaches DeFi About Admin Key…",
+    "url": "https://favoriteblockchain.medium.com/anatomy-of-a-preventable-drain-what-the-wasabi-protocol-exploit-teaches-defi-about-admin-key-096abef96408",
+    "date": "2026-05-13",
+    "platform": "Medium",
+    "excerpt": "Published: May 13, 2026 On April 30, 2026, Wasabi Protocol lost $5.9 million across Ethereum, Base, Berachain, and Blast in under three minutes. The attacker did not…",
+    "categories": [
+      "blockchain",
+      "smart-contract-security",
+      "web3-security",
+      "smart-contracts"
+    ]
+  },
+  {
+    "title": "Smart Contract Security Checklist 3️⃣ — (Attacker’s Mindset): Gas Griefing",
+    "url": "https://favoriteblockchain.medium.com/smart-contract-security-checklist-3%EF%B8%8F%E2%83%A3-attackers-mindset-bcf0d54e27c8",
+    "date": "2026-04-14",
+    "platform": "Medium",
+    "excerpt": "That question is straight from the Solodit Smart Contract Security Checklist . And like most questions on that checklist, it sounds simple enough until you start pulling…",
+    "categories": [
+      "smart-contract-auditing",
+      "blockchain",
+      "web3-security",
+      "blockchain-security",
+      "smart-contract-security"
+    ]
+  },
+  {
+    "title": "Rust for Solidity Developers- What is Rust, and why should a Solidity developer care?… Article 01",
+    "url": "https://favoriteblockchain.medium.com/rust-for-solidity-developers-article-01-d10920b51576",
+    "date": "2026-04-08",
+    "platform": "Medium",
+    "excerpt": "Okay, so I decided to learn Rust. I’ve been writing Solidity smart contracts for a while now and I got to a point where I kept running into Rust everywhere. Foundry is…",
+    "categories": [
+      "blockchain-development",
+      "solidity",
+      "rust-programming-language",
+      "rust",
+      "rust-programming-tutorial"
+    ]
+  },
+  {
+    "title": "Smart Contract Security Checklist 2️⃣(Attacker’s Mindset): How Token Blacklists Can Hold Your Users…",
+    "url": "https://favoriteblockchain.medium.com/smart-contract-security-checklist-2%EF%B8%8F%E2%83%A3-attackers-mindset-c776b47f67f8",
+    "date": "2026-02-22",
+    "platform": "Medium",
+    "excerpt": "That’s not a hypothetical. It’s a live vulnerability class that has been found in real DeFi protocols, judged as medium severity, and quietly patched after audit…",
+    "categories": [
+      "solidity",
+      "web3",
+      "smart-contract-security",
+      "blockchain",
+      "defi"
+    ]
+  },
+  {
+    "title": "Smart contract security checklist 1️⃣-(Attacker’s Mindset): How Dust Transactions Can Deny Service…",
+    "url": "https://favoriteblockchain.medium.com/smart-contract-security-checklist-1%EF%B8%8F%E2%83%A3-attackers-mindset-11bd9d1492e8",
+    "date": "2025-05-31",
+    "platform": "Medium",
+    "excerpt": "That’s a simple question from the Solodit Smart Contract Security Checklist . But behind it lies a serious vulnerability that has bricked live DeFi protocols and cost…",
+    "categories": [
+      "smart-contract-auditing",
+      "smart-contract-security",
+      "solidity-contract-audit",
+      "solidity",
+      "smart-contract-blockchain"
+    ]
+  },
+  {
+    "title": "My First Competitive Audit Experience: Insights from First Flight",
+    "url": "https://favoriteblockchain.medium.com/my-first-competitive-audit-experience-insights-from-first-flight-1069aa038fba",
+    "date": "2025-05-12",
+    "platform": "Medium",
+    "excerpt": "First Flight, a non-paid, competitive audit event, provided a unique opportunity to test my skills. As someone relatively new to competitive auditing, the experience was…",
+    "categories": [
+      "smart-contract-security",
+      "solidity-contract-audit",
+      "firstflight",
+      "smart-contract-auditing",
+      "smart-contract-researcher"
+    ]
+  },
+  {
+    "title": "ERC-4626 Inflation Attack and How to Mitigate It.",
+    "url": "https://coinsbench.com/erc-4626-inflation-attack-and-how-to-mitigate-it-805414809969",
+    "date": "2025-04-16",
+    "platform": "Medium",
+    "excerpt": "Now, let’s picture this together — a freshly deployed vault, seemingly secure, awaiting user deposits. Within minutes, an attacker deposits just 1 wei — an amount so…",
+    "categories": [
+      "erc-4626-inflation-attack",
+      "smart-contract-security",
+      "smart-contract-exploit",
+      "smart-contract-auditing",
+      "vault"
+    ]
+  },
+  {
+    "title": "Functions with Callback: A Big Contribution to Reentrancy Attacks",
+    "url": "https://favoriteblockchain.medium.com/functions-with-callback-a-big-contribution-to-reentrancy-attacks-88cde8df4319",
+    "date": "2025-03-21",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Mastering Ethernaut Level 0: Hello Ethernaut",
+    "url": "https://favoriteblockchain.medium.com/mastering-ethernaut-level-0-hello-ethernaut-f9e4346f497b",
+    "date": "2024-10-30",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Smart Contract Security Series",
+    "url": "https://favoriteblockchain.medium.com/smart-contract-security-series-0d4357bc82f7",
+    "date": "2024-09-13",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Understanding the Ways Smart Contracts Call Each Other",
+    "url": "https://favoriteblockchain.medium.com/understanding-the-ways-smart-contracts-call-each-other-7da68e744738",
+    "date": "2024-03-18",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Ethereum Got a Makeover: The Dencun Upgrade Explained",
+    "url": "https://favoriteblockchain.medium.com/ethereum-got-a-makeover-the-decun-upgrade-explained-e1d3c7e6bb64",
+    "date": "2024-03-14",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "EVM Storage",
+    "url": "https://favoriteblockchain.medium.com/evm-storage-8c2186e0e7de",
+    "date": "2024-02-29",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "EVM Memory",
+    "url": "https://favoriteblockchain.medium.com/evm-memory-9f393ca0d635",
+    "date": "2024-02-18",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Ethereum Virtual Machine (EVM) in Simple Terms",
+    "url": "https://favoriteblockchain.medium.com/ethereum-virtual-machine-evm-in-simple-terms-735502778f65",
+    "date": "2024-02-07",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Calldata in Solidity",
+    "url": "https://favoriteblockchain.medium.com/calldata-in-solidity-92fdefe2e2c1",
+    "date": "2023-10-21",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Guidelines on Becoming a Blockchain Developer in 2023 (Solidity)",
+    "url": "https://favoriteblockchain.medium.com/guidelines-on-becoming-a-blockchain-developer-in-2023-solidity-2922150f2f84",
+    "date": "2023-10-21",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Gas Optimization in Solidity",
+    "url": "https://favoriteblockchain.medium.com/gas-optimization-in-solidity-89b0dc8d1e05",
+    "date": "2023-07-25",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Solidity Floating Points and Precision",
+    "url": "https://favoriteblockchain.medium.com/solidity-floating-points-and-precision-ecdc4c8afb84",
+    "date": "2022-06-23",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Solidity Custom Error: A Way to Save Gas, Pt. 2",
+    "url": "https://favoriteblockchain.medium.com/solidity-custom-error-a-way-to-save-gas-pt-2-acd1ab2223e6",
+    "date": "2022-06-21",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Solidity Custom Error: A Way to Save Gas",
+    "url": "https://favoriteblockchain.medium.com/solidity-custom-error-a-way-to-save-gas-b731fdd648c0",
+    "date": "2022-06-20",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "All You Need to Know About DeFi (Decentralized Finance)",
+    "url": "https://favoriteblockchain.medium.com/all-you-need-to-know-about-defi-decentralized-finance-5e3dc83cb932",
+    "date": "2021-09-09",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  },
+  {
+    "title": "Ethereum Smart Contracts Explained",
+    "url": "https://favoriteblockchain.medium.com/ethereum-smart-contracts-explained-c05be29ad912",
+    "date": "2021-09-02",
+    "platform": "Medium",
+    "excerpt": "",
+    "categories": []
+  }
+]

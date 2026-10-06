@@ -1,0 +1,40 @@
+{
+  "github": "tehilafavourite",
+  "repos": [
+    {
+      "repo": "eth-unit-converter",
+      "description": "Converts an amount between Ethereum units (wei, gwei, ether) from the command line.",
+      "stack": "Rust · CLI",
+      "status": "complete",
+      "demo": ""
+    },
+    {
+      "repo": "hello-blockchain-cli",
+      "description": "Validates Ethereum addresses: 0x prefix, length and hex characters.",
+      "stack": "Rust · CLI",
+      "status": "complete",
+      "demo": ""
+    },
+    {
+      "repo": "Personal-Carbon-Footprint-CLI-Calculator",
+      "description": "Calculates CO₂e from travel, home energy, diet and consumer goods using IPCC emission factors, and saves a JSON report.",
+      "stack": "Rust · clap · serde",
+      "status": "complete",
+      "demo": ""
+    }
+  ],
+  "tracks": [
+    {
+      "name": "Rust security tooling",
+      "note": "Static checks and test harnesses for smart contract review."
+    },
+    {
+      "name": "Formal verification experiments",
+      "note": "Specifying and proving properties of small contracts."
+    },
+    {
+      "name": "Chemical engineering in Rust",
+      "note": "Thermodynamic and process calculators."
+    }
+  ]
+}

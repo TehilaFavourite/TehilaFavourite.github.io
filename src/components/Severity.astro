@@ -1,0 +1,61 @@
+---
+interface Props {
+  counts?: { critical: number; high: number; medium: number; low: number; info: number };
+  pending?: boolean;
+}
+const { counts, pending = false } = Astro.props;
+const cells = [
+  ['C', 'Critical', 'critical'],
+  ['H', 'High', 'high'],
+  ['M', 'Medium', 'medium'],
+  ['L', 'Low', 'low'],
+  ['I', 'Info', 'info'],
+] as const;
+---
+
+{
+  counts ? (
+    <dl class="sev">
+      {cells.map(([abbr, name, key]) => (
+        <div class={counts[key] ? '' : 'zero'}>
+          <dt>
+            <abbr title={name}>{abbr}</abbr>
+          </dt>
+          <dd>{counts[key]}</dd>
+        </div>
+      ))}
+    </dl>
+  ) : (
+    <p class="meta">{pending ? 'Results pending' : 'No findings listed'}</p>
+  )
+}
+
+<style>
+  .sev {
+    display: grid;
+    grid-template-columns: repeat(5, 2.6em);
+    margin: 0;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+  }
+  .sev div {
+    border-left: 1px solid var(--rule);
+    padding-left: 6px;
+  }
+  dt {
+    font-size: 0.6875rem;
+    color: var(--muted);
+  }
+  dt abbr {
+    text-decoration: none;
+  }
+  dd {
+    margin: 0;
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+  .zero dd {
+    color: var(--muted);
+    font-weight: 400;
+  }
+</style>

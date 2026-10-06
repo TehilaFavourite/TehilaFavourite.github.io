@@ -1,0 +1,106 @@
+<svg viewBox="0 0 1600 815" role="img" aria-label="CloseCarbon contract system: ten project contracts across four plans and three project types, all minting CCRT and project NFTs; an energy efficiency contract that reuses business-plan KYC; an energy sharing marketplace with a router, listings, demands, an order book and a price oracle; and a donation certificate store." class="dg" xmlns="http://www.w3.org/2000/svg" style="fill:var(--dg-ink)">
+<defs><marker id="ah-netzence-closecarbon-02" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--dg-ink2)"/></marker></defs>
+<rect width="1600" height="815" style="fill:var(--dg-bg)"/>
+<text x="300" y="155" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Green project</text>
+<text x="560" y="155" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Infrastructure change</text>
+<text x="820" y="155" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Carbon monitoring</text>
+<text x="20" y="128" font-size="14" font-weight="bold">One upgradeable contract per plan and project type</text>
+<text x="20" y="205" font-size="13" font-weight="bold">Basic</text>
+<rect x="180" y="170" width="240" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="300" y="196" text-anchor="middle" font-weight="bold" font-size="13">BasicGreenProject</text>
+<text x="300" y="212" text-anchor="middle" font-size="12">KYC → … → CCRT + NFT</text>
+<rect x="440" y="170" width="240" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="560" y="196" text-anchor="middle" font-weight="bold" font-size="13">BasicInfrastructureChange</text>
+<text x="560" y="212" text-anchor="middle" font-size="12">KYC → … → CCRT + NFT</text>
+<rect x="700" y="170" width="240" height="60" rx="6" stroke-width="1.2" stroke-dasharray="5 3" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="820" y="203.5" text-anchor="middle" font-size="12">not offered</text>
+<text x="20" y="281" font-size="13" font-weight="bold">Business Plan</text>
+<rect x="180" y="246" width="240" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="300" y="272" text-anchor="middle" font-weight="bold" font-size="13">BusinessGreen</text>
+<text x="300" y="288" text-anchor="middle" font-size="12">KYC → … → CCRT + NFT</text>
+<rect x="440" y="246" width="240" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="560" y="272" text-anchor="middle" font-weight="bold" font-size="13">BusinessInfrastructureChange</text>
+<text x="560" y="288" text-anchor="middle" font-size="12">KYC → … → CCRT + NFT</text>
+<rect x="700" y="246" width="240" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="820" y="272" text-anchor="middle" font-weight="bold" font-size="13">BusinessCarbonMonitoring</text>
+<text x="820" y="288" text-anchor="middle" font-size="12">verify + NFT only, no credits</text>
+<text x="20" y="357" font-size="13" font-weight="bold">Business Plan Plus</text>
+<rect x="180" y="322" width="240" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="300" y="348" text-anchor="middle" font-weight="bold" font-size="13">BusinessPlanPlusGreen</text>
+<text x="300" y="364" text-anchor="middle" font-size="12">KYC → … → CCRT + NFT</text>
+<rect x="440" y="322" width="240" height="60" rx="6" stroke-width="1.2" stroke-dasharray="5 3" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="560" y="355.5" text-anchor="middle" font-size="12">not offered</text>
+<rect x="700" y="322" width="240" height="60" rx="6" stroke-width="1.2" stroke-dasharray="5 3" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="820" y="355.5" text-anchor="middle" font-size="12">not offered</text>
+<text x="20" y="433" font-size="13" font-weight="bold">Governance</text>
+<rect x="180" y="398" width="240" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="300" y="424" text-anchor="middle" font-weight="bold" font-size="13">GovernanceGreenProject</text>
+<text x="300" y="440" text-anchor="middle" font-size="12">KYC → … → CCRT + NFT</text>
+<rect x="440" y="398" width="240" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="560" y="424" text-anchor="middle" font-weight="bold" font-size="13">GovernanceInfrastructureChange</text>
+<text x="560" y="440" text-anchor="middle" font-size="12">KYC → … → CCRT + NFT</text>
+<rect x="700" y="398" width="240" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="820" y="424" text-anchor="middle" font-weight="bold" font-size="13">GovernanceCarbonMonitoring</text>
+<text x="820" y="440" text-anchor="middle" font-size="12">verify + NFT only, no credits</text>
+<rect x="1290" y="170" width="290" height="136" rx="0" stroke-width="1.2" style="fill:var(--dg-note-f);stroke:var(--dg-note-s)"/>
+<text x="1435" y="211.5" text-anchor="middle" font-size="12">same pipeline in every</text>
+<text x="1435" y="226.5" text-anchor="middle" font-size="12">project contract:</text>
+<text x="1435" y="241.5" text-anchor="middle" font-size="12">performKYC → validate →</text>
+<text x="1435" y="256.5" text-anchor="middle" font-size="12">recordPlant → verifyAndMint</text>
+<text x="1435" y="271.5" text-anchor="middle" font-size="12">→ issueCarbonCredits</text>
+<rect x="1000" y="170" width="250" height="64" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="1125" y="198" text-anchor="middle" font-weight="bold" font-size="13">CCRT</text>
+<text x="1125" y="214" text-anchor="middle" font-size="12">ERC-20, whitelisted minters only</text>
+<rect x="1000" y="262" width="250" height="64" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="1125" y="290" text-anchor="middle" font-weight="bold" font-size="13">GreenProjectNFT /</text>
+<text x="1125" y="306" text-anchor="middle" font-size="12">InfrastructureChangeNFT (handlers)</text>
+<line x1="955" y1="170" x2="955" y2="458" stroke-width="1.3" style="stroke:var(--dg-ink2)"/>
+<polyline points="955,200 1000,200" stroke-width="1.3" marker-end="url(#ah-netzence-closecarbon-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="955,290 1000,290" stroke-width="1.3" marker-end="url(#ah-netzence-closecarbon-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="977" y="194" font-size="11" text-anchor="middle" style="fill:var(--dg-ink2)">mint</text>
+<text x="977" y="284" font-size="11" text-anchor="middle" style="fill:var(--dg-ink2)">mint</text>
+<rect x="700" y="520" width="300" height="110" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="850" y="548.5" text-anchor="middle" font-weight="bold" font-size="13">CloseCarbonEnergyEfficiency</text>
+<text x="850" y="564.5" text-anchor="middle" font-size="12">IoT usage batches per facility</text>
+<text x="850" y="579.5" text-anchor="middle" font-size="12">180-day reduction goals</text>
+<text x="850" y="594.5" text-anchor="middle" font-size="12">reuses business-plan KYC</text>
+<text x="850" y="609.5" text-anchor="middle" font-size="12">CCRT minted for the reduction</text>
+<polyline points="1000,575 1270,575 1270,202 1250,202" stroke-width="1.3" marker-end="url(#ah-netzence-closecarbon-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="1276" y="420" text-anchor="start" font-size="11.5" style="fill:var(--dg-ink2)">mint</text>
+<text x="20" y="500" font-size="13" font-weight="bold">Energy sharing marketplace</text>
+<rect x="220" y="520" width="260" height="64" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="350" y="548" text-anchor="middle" font-weight="bold" font-size="13">EnergyTradingRouter</text>
+<text x="350" y="564" text-anchor="middle" font-size="12">one entry point for the app</text>
+<rect x="20" y="625" width="200" height="70" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="120" y="648.5" text-anchor="middle" font-weight="bold" font-size="13">EnergySharingContract</text>
+<text x="120" y="664.5" text-anchor="middle" font-size="12">seller listings</text>
+<text x="120" y="679.5" text-anchor="middle" font-size="12">excess energy balances</text>
+<rect x="240" y="625" width="200" height="70" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="340" y="648.5" text-anchor="middle" font-weight="bold" font-size="13">BuyerDemandContract</text>
+<text x="340" y="664.5" text-anchor="middle" font-size="12">buyer demands</text>
+<text x="340" y="679.5" text-anchor="middle" font-size="12">and trades</text>
+<rect x="460" y="625" width="200" height="70" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="560" y="648.5" text-anchor="middle" font-weight="bold" font-size="13">EnergyOrderBook</text>
+<text x="560" y="664.5" text-anchor="middle" font-size="12">per-location book</text>
+<text x="560" y="679.5" text-anchor="middle" font-size="12">midpoint price match</text>
+<rect x="20" y="725" width="200" height="50" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="120" y="746" text-anchor="middle" font-weight="bold" font-size="13">PriceOracle</text>
+<text x="120" y="762" text-anchor="middle" font-size="12">platform min / max price</text>
+<rect x="240" y="725" width="200" height="50" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="340" y="746" text-anchor="middle" font-weight="bold" font-size="13">Escrow</text>
+<text x="340" y="762" text-anchor="middle" font-size="12">owner release / refund</text>
+<polyline points="260,584 260,604 120,604 120,625" stroke-width="1.3" marker-end="url(#ah-netzence-closecarbon-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="350,584 350,625" stroke-width="1.3" marker-end="url(#ah-netzence-closecarbon-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="440,584 440,604 560,604 560,625" stroke-width="1.3" marker-end="url(#ah-netzence-closecarbon-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="120,695 120,725" stroke-width="1.3" stroke-dasharray="6 4" marker-end="url(#ah-netzence-closecarbon-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="180,352 160,352 160,470 250,470 250,520" stroke-width="1.3" stroke-dasharray="6 4" marker-end="url(#ah-netzence-closecarbon-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="256" y="506" font-size="11" style="fill:var(--dg-ink2)">seller / buyer registered in Plan Plus</text>
+<rect x="1040" y="690" width="290" height="70" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="1185" y="713.5" text-anchor="middle" font-weight="bold" font-size="13">DonationCertificate</text>
+<text x="1185" y="729.5" text-anchor="middle" font-size="12">stores the IPFS hash of each</text>
+<text x="1185" y="744.5" text-anchor="middle" font-size="12">donation certificate</text>
+<rect x="1350" y="690" width="230" height="70" rx="0" stroke-width="1.2" style="fill:var(--dg-note-f);stroke:var(--dg-note-s)"/>
+<text x="1465" y="721" text-anchor="middle" font-size="12">also in this repo: first</text>
+<text x="1465" y="736" text-anchor="middle" font-size="12">versions of NST + SAFT</text>
+<text x="20" y="800" font-size="11.5" style="fill:var(--dg-muted)">solid = call / mint     dashed = read</text>
+</svg>

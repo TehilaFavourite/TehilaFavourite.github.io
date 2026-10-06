@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    rect { fill: #f3f3ef; stroke: #151514; }
+    text { fill: #151514; }
+    @media (prefers-color-scheme: dark) {
+      rect { fill: #121212; stroke: #e8e7e2; }
+      text { fill: #e8e7e2; }
+    }
+  </style>
+  <rect x="3" y="3" width="58" height="58" stroke-width="4"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="26" font-weight="600">FA</text>
+</svg>

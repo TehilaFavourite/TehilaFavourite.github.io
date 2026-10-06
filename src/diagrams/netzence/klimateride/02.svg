@@ -1,0 +1,123 @@
+<svg viewBox="0 0 1600 840" role="img" aria-label="KlimateRide live map architecture: the driver app publishes GPS over AWS IoT MQTT to the location service, which filters and snaps it, writes Redis GEO and Aurora, and pushes positions to riders through Ably. Dispatch finds drivers with Redis GEOSEARCH; routing uses Google Routes and OSRM; geocoding checks an internal landmark index before Google Places." class="dg" xmlns="http://www.w3.org/2000/svg" style="fill:var(--dg-ink)">
+<defs><marker id="ah-netzence-klimateride-02" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--dg-ink2)"/></marker></defs>
+<rect width="1600" height="840" style="fill:var(--dg-bg)"/>
+<text x="145" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Apps</text>
+<text x="430" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Real-time transport</text>
+<text x="720" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Services (AWS ECS)</text>
+<text x="1025" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Data</text>
+<text x="1390" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">External map providers</text>
+<rect x="20" y="150" width="250" height="120" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="145" y="183.5" text-anchor="middle" font-weight="bold" font-size="13">Rider app</text>
+<text x="145" y="199.5" text-anchor="middle" font-size="12">Google Maps SDK + Places</text>
+<text x="145" y="214.5" text-anchor="middle" font-size="12">driver marker eased between</text>
+<text x="145" y="229.5" text-anchor="middle" font-size="12">pings at 60 fps</text>
+<text x="145" y="244.5" text-anchor="middle" font-size="12">REST via API Gateway</text>
+<rect x="20" y="330" width="250" height="150" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="145" y="371" text-anchor="middle" font-weight="bold" font-size="13">Driver app</text>
+<text x="145" y="387" text-anchor="middle" font-size="12">Google Navigation SDK (in-app)</text>
+<text x="145" y="402" text-anchor="middle" font-size="12">GPS foreground service</text>
+<text x="145" y="417" text-anchor="middle" font-size="12">on-device Kalman filter</text>
+<text x="145" y="432" text-anchor="middle" font-size="12">MQTT publish every 5 s</text>
+<text x="145" y="447" text-anchor="middle" font-size="12">HERE offline fallback</text>
+<rect x="20" y="560" width="250" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="145" y="586" text-anchor="middle" font-weight="bold" font-size="13">Admin dashboard</text>
+<text x="145" y="602" text-anchor="middle" font-size="12">live trips on Google Maps JS</text>
+<text x="145" y="617" text-anchor="middle" font-size="12">SOS alerts, zone editor</text>
+<text x="145" y="632" text-anchor="middle" font-size="12">emission analytics</text>
+<rect x="320" y="160" width="220" height="80" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="430" y="188.5" text-anchor="middle" font-weight="bold" font-size="13">Ably (server → app)</text>
+<text x="430" y="204.5" text-anchor="middle" font-size="12">positions, ride status, SOS</text>
+<text x="430" y="219.5" text-anchor="middle" font-size="12">history on reconnect</text>
+<rect x="320" y="360" width="220" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="430" y="386" text-anchor="middle" font-weight="bold" font-size="13">AWS IoT Core MQTT</text>
+<text x="430" y="402" text-anchor="middle" font-size="12">driver → server, QoS 1</text>
+<text x="430" y="417" text-anchor="middle" font-size="12">queues pings in dead zones</text>
+<text x="430" y="432" text-anchor="middle" font-size="12">X.509 cert per device</text>
+<rect x="320" y="560" width="220" height="70" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="430" y="591" text-anchor="middle" font-weight="bold" font-size="13">API Gateway</text>
+<text x="430" y="607" text-anchor="middle" font-size="12">JWT, rate limits, WAF</text>
+<rect x="590" y="150" width="260" height="110" rx="6" stroke-width="1.2" style="fill:var(--dg-web-f);stroke:var(--dg-web-s)"/>
+<text x="720" y="178.5" text-anchor="middle" font-weight="bold" font-size="13">Dispatch service</text>
+<text x="720" y="194.5" text-anchor="middle" font-size="12">REQUESTED → ACCEPTED →</text>
+<text x="720" y="209.5" text-anchor="middle" font-size="12">IN_TRIP → COMPLETED</text>
+<text x="720" y="224.5" text-anchor="middle" font-size="12">offer to the 3 nearest drivers</text>
+<text x="720" y="239.5" text-anchor="middle" font-size="12">Along-ride matching</text>
+<rect x="590" y="330" width="260" height="130" rx="6" stroke-width="1.2" style="fill:var(--dg-web-f);stroke:var(--dg-web-s)"/>
+<text x="720" y="368.5" text-anchor="middle" font-weight="bold" font-size="13">Location service</text>
+<text x="720" y="384.5" text-anchor="middle" font-size="12">speed / accuracy checks</text>
+<text x="720" y="399.5" text-anchor="middle" font-size="12">OSRM snap for display</text>
+<text x="720" y="414.5" text-anchor="middle" font-size="12">GEOADD + save GPS point</text>
+<text x="720" y="429.5" text-anchor="middle" font-size="12">publish to the rider channel</text>
+<rect x="590" y="500" width="260" height="70" rx="6" stroke-width="1.2" style="fill:var(--dg-web-f);stroke:var(--dg-web-s)"/>
+<text x="720" y="523.5" text-anchor="middle" font-weight="bold" font-size="13">Routing service</text>
+<text x="720" y="539.5" text-anchor="middle" font-size="12">Google Routes (user-facing)</text>
+<text x="720" y="554.5" text-anchor="middle" font-size="12">OSRM (background ETAs)</text>
+<rect x="590" y="590" width="260" height="80" rx="6" stroke-width="1.2" style="fill:var(--dg-web-f);stroke:var(--dg-web-s)"/>
+<text x="720" y="618.5" text-anchor="middle" font-weight="bold" font-size="13">Geocoding service</text>
+<text x="720" y="634.5" text-anchor="middle" font-size="12">1. landmark DB  2. Google Places</text>
+<text x="720" y="649.5" text-anchor="middle" font-size="12">3. Nominatim / What3Words</text>
+<rect x="590" y="690" width="260" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-bug-f);stroke:var(--dg-bug-s)"/>
+<text x="720" y="716" text-anchor="middle" font-weight="bold" font-size="13">SOS</text>
+<text x="720" y="732" text-anchor="middle" font-size="12">&lt; 500 ms · GPS every 2 s</text>
+<rect x="900" y="150" width="250" height="80" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="1025" y="178.5" text-anchor="middle" font-weight="bold" font-size="13">Redis GEO</text>
+<text x="1025" y="194.5" text-anchor="middle" font-size="12">live drivers, 30 s expiry</text>
+<text x="1025" y="209.5" text-anchor="middle" font-size="12">GEOSEARCH &lt; 1 ms</text>
+<rect x="900" y="360" width="250" height="70" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="1025" y="383.5" text-anchor="middle" font-weight="bold" font-size="13">Aurora PostgreSQL + PostGIS</text>
+<text x="1025" y="399.5" text-anchor="middle" font-size="12">trips, GPS points, boardings,</text>
+<text x="1025" y="414.5" text-anchor="middle" font-size="12">emission records</text>
+<rect x="900" y="450" width="250" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="1025" y="476" text-anchor="middle" font-weight="bold" font-size="13">Tile38 geofences</text>
+<text x="1025" y="492" text-anchor="middle" font-size="12">surge, airport, FCT boundary</text>
+<rect x="900" y="600" width="250" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="1025" y="626" text-anchor="middle" font-weight="bold" font-size="13">Elasticsearch</text>
+<text x="1025" y="642" text-anchor="middle" font-size="12">2,500+ Abuja landmarks</text>
+<rect x="900" y="690" width="250" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="1025" y="716" text-anchor="middle" font-weight="bold" font-size="13">Emission processor</text>
+<text x="1025" y="732" text-anchor="middle" font-size="12">Python Celery, fed by SQS</text>
+<text x="1025" y="747" text-anchor="middle" font-size="12">smooth → snap → validate</text>
+<text x="1025" y="762" text-anchor="middle" font-size="12">→ emission record → CCRT</text>
+<rect x="1200" y="150" width="380" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="1390" y="176" text-anchor="middle" font-weight="bold" font-size="13">Google Maps SDK + Navigation SDK</text>
+<text x="1390" y="192" text-anchor="middle" font-size="12">rider map, driver turn-by-turn</text>
+<rect x="1200" y="230" width="380" height="55" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="1390" y="253.5" text-anchor="middle" font-weight="bold" font-size="13">Google Routes API</text>
+<text x="1390" y="269.5" text-anchor="middle" font-size="12">fares, ETAs, navigation, stop order</text>
+<rect x="1200" y="305" width="380" height="55" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="1390" y="328.5" text-anchor="middle" font-weight="bold" font-size="13">OSRM (self-hosted)</text>
+<text x="1390" y="344.5" text-anchor="middle" font-size="12">display snapping, background ETAs</text>
+<rect x="1200" y="380" width="380" height="55" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="1390" y="403.5" text-anchor="middle" font-weight="bold" font-size="13">HERE SDK</text>
+<text x="1390" y="419.5" text-anchor="middle" font-size="12">offline maps + routing for drivers</text>
+<rect x="1200" y="600" width="380" height="55" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="1390" y="623.5" text-anchor="middle" font-weight="bold" font-size="13">Google Places + Geocoding</text>
+<text x="1390" y="639.5" text-anchor="middle" font-size="12">addresses not in the landmark DB</text>
+<rect x="1200" y="700" width="380" height="55" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="1390" y="723.5" text-anchor="middle" font-weight="bold" font-size="13">Google Roads API</text>
+<text x="1390" y="739.5" text-anchor="middle" font-size="12">authoritative snap for emission km</text>
+<rect x="1200" y="775" width="380" height="50" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="1390" y="796" text-anchor="middle" font-weight="bold" font-size="13">Twilio</text>
+<text x="1390" y="812" text-anchor="middle" font-size="12">SOS SMS + WhatsApp to contacts</text>
+<polyline points="270,405 320,405" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="540,405 590,405" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="295" y="398" font-size="10.5" text-anchor="middle" style="fill:var(--dg-ink2)">GPS</text>
+<polyline points="850,345 1025,345 1025,230" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="940" y="338" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">GEOADD</text>
+<polyline points="850,395 900,395" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="590,345 568,345 568,222 540,222" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="590,185 540,185" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="320,205 270,205" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="295" y="198" font-size="10.5" text-anchor="middle" style="fill:var(--dg-ink2)">live</text>
+<polyline points="430,240 430,300 145,300 145,330" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="300" y="294" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">ride offers</text>
+<polyline points="850,190 900,190" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="875" y="183" font-size="10.5" text-anchor="middle" style="fill:var(--dg-ink2)">search</text>
+<polyline points="270,600 320,600" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="540,580 565,580 565,535 590,535" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="540,610 590,610" stroke-width="1.3" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="850,450 880,450 880,735 900,735" stroke-width="1.3" stroke-dasharray="6 4" marker-end="url(#ah-netzence-klimateride-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="886" y="683" text-anchor="start" font-size="11.5" style="fill:var(--dg-ink2)">trip END</text>
+<text x="20" y="800" font-size="12" style="fill:var(--dg-ink2)">targets: 100,000+ concurrent users · position every 5 s · &lt; 1 s from driver phone to rider screen · 99.5% uptime (99.999% for SOS)</text>
+<text x="20" y="822" font-size="11.5" style="fill:var(--dg-muted)">solid = data flow     dashed = queued job</text>
+</svg>

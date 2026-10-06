@@ -1,0 +1,55 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getCompanies } from '../../../lib/content';
+
+export async function getStaticPaths() {
+  const companies = await getCompanies();
+  return companies.map((company) => ({ params: { company: company.slug }, props: { company } }));
+}
+
+const { company: c } = Astro.props;
+---
+
+<Base title={c.name} description={`Projects Favour Ajaye worked on at ${c.name}.`}>
+  <header class="page-head">
+    <p class="crumbs"><a href="/work">Work</a> / {c.name}</p>
+    <h1>{c.name}</h1>
+    <p>{c.summary}</p>
+    {(c.role || c.period) && <p class="meta">{[c.role, c.period].filter(Boolean).join(' · ')}</p>}
+  </header>
+
+  <section class="sec" aria-label="Projects">
+    <div class="row cols label" aria-hidden="true">
+      <span class="c-3">Project</span>
+      <span class="c-4">Role</span>
+      <span class="c-3">Stack</span>
+      <span class="c-2 c-end">Diagrams</span>
+    </div>
+    <ul class="rows">
+      {c.projects.map((p) => (
+        <li>
+          <div class="row">
+            <p class="c-3 title"><a href={`/work/${c.slug}/${p.slug}`}>{p.name}</a></p>
+            <p class="c-4 meta">{p.role}</p>
+            <p class="c-3 meta">{p.stack}</p>
+            <p class="c-2 c-end meta tabular">{p.diagrams.length}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .cols {
+    padding-bottom: 6px;
+  }
+  .page-head .meta {
+    margin-top: 6px;
+  }
+  @media (max-width: 760px) {
+    .cols {
+      display: none;
+    }
+  }
+</style>

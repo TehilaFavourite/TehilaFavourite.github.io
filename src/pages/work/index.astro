@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import { getCompanies } from '../../lib/content';
+
+const companies = await getCompanies();
+---
+
+<Base title="Work" description="Companies Favour Ajaye has built for, with architecture diagrams for each project.">
+  <header class="page-head">
+    <p class="crumbs">Work</p>
+    <h1>Companies and projects</h1>
+    <p>Organisations I have built for. Each project page shows its architecture.</p>
+  </header>
+
+  {
+    companies.map((c, i) => (
+      <section class="sec" aria-labelledby={`h-${c.slug}`}>
+        <SectionHead id={`h-${c.slug}`} num={String(i + 1).padStart(2, '0')} title={c.name} href={`/work/${c.slug}`} linkText="Company" />
+        <p class="sum">
+          {c.summary}
+          {c.role && <span class="meta"> · {c.role}</span>}
+          {c.period && <span class="meta"> · {c.period}</span>}
+        </p>
+        <ul class="rows">
+          {c.projects.map((p) => (
+            <li>
+              <div class="row">
+                <p class="c-3 title"><a href={`/work/${c.slug}/${p.slug}`}>{p.name}</a></p>
+                <p class="c-4 meta">{p.role}</p>
+                <p class="c-5 meta">{p.stack}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</Base>
+
+<style>
+  .sum {
+    margin-bottom: 16px;
+    color: var(--ink-2);
+  }
+</style>

@@ -1,0 +1,91 @@
+<svg viewBox="0 0 1600 1020" role="img" aria-label="Prrr oracle epoch: publishers submit reports; the validator holds a secret random string S; each report gets a personal random value from H(report ‖ S); the validator includes the top report and the second if it clears rmin; settlement recomputes the values with findTopTwo and pays the top publisher v1 − v2 and the validator v2." class="dg" xmlns="http://www.w3.org/2000/svg" style="fill:var(--dg-ink)">
+<defs><marker id="ah-shape-rotator-prrr-oracle-01" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--dg-ink2)"/></marker></defs>
+<rect width="1600" height="1020" style="fill:var(--dg-bg)"/>
+<rect x="495" y="78" width="1095" height="900" rx="14" stroke-width="1.5" stroke-dasharray="8 5" style="fill:var(--dg-zone-f);stroke:var(--dg-zone-s)"/>
+<text x="513" y="100" font-size="13" font-weight="bold" style="fill:var(--dg-zone-t)">on-chain  (Solidity 0.8.24, Foundry, Sepolia)</text>
+<text x="120" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Publishers</text>
+<text x="350" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Validator</text>
+<text x="685" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">PrrrOracle (designed)</text>
+<text x="1080" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">PrrrRandomValue (library)</text>
+<text x="1445" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Rewards</text>
+<text x="20" y="160" font-size="14" font-weight="bold">A. reports come in</text>
+<rect x="20" y="180" width="200" height="80" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="120" y="208.5" text-anchor="middle" font-weight="bold" font-size="13">Publishers</text>
+<text x="120" y="224.5" text-anchor="middle" font-size="12">report = keccak256(</text>
+<text x="120" y="239.5" text-anchor="middle" font-size="12">dataType, value, timestamp)</text>
+<circle cx="20" cy="180" r="12" style="fill:var(--dg-ink2)"/><text x="20" y="184" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">1</text>
+<rect x="520" y="180" width="330" height="80" rx="6" stroke-width="1.2" stroke-dasharray="5 3" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="530" y="216" text-anchor="start" font-weight="bold" font-size="13">submit report</text>
+<text x="530" y="232" text-anchor="start" font-size="12">bytes32 per report, per epoch</text>
+<polyline points="220,220 520,220" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-01)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="370" y="213" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">report</text>
+<line x1="20" y1="295" x2="485" y2="295" stroke-dasharray="4 4" style="stroke:var(--dg-rule)"/>
+<line x1="505" y1="295" x2="1575" y2="295" stroke-dasharray="4 4" style="stroke:var(--dg-zone-s)"/>
+<text x="20" y="320" font-size="14" font-weight="bold">B. the secret string S</text>
+<rect x="250" y="340" width="200" height="80" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="350" y="368.5" text-anchor="middle" font-weight="bold" font-size="13">Validator</text>
+<text x="350" y="384.5" text-anchor="middle" font-size="12">holds random string S</text>
+<text x="350" y="399.5" text-anchor="middle" font-size="12">VRF; prototype: prevrandao</text>
+<circle cx="250" cy="340" r="12" style="fill:var(--dg-ink2)"/><text x="250" y="344" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">2</text>
+<rect x="520" y="340" width="330" height="80" rx="6" stroke-width="1.2" stroke-dasharray="5 3" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="530" y="376" text-anchor="start" font-weight="bold" font-size="13">reveal S</text>
+<text x="530" y="392" text-anchor="start" font-size="12">after the epoch’s reports close</text>
+<polyline points="450,380 520,380" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-01)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="485" y="373" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">S</text>
+<line x1="20" y1="455" x2="485" y2="455" stroke-dasharray="4 4" style="stroke:var(--dg-rule)"/>
+<line x1="505" y1="455" x2="1575" y2="455" stroke-dasharray="4 4" style="stroke:var(--dg-zone-s)"/>
+<text x="20" y="480" font-size="14" font-weight="bold">C. a personal value per report</text>
+<rect x="520" y="510" width="330" height="70" rx="6" stroke-width="1.2" stroke-dasharray="5 3" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="685" y="548.5" text-anchor="middle" font-size="12">for every report this epoch</text>
+<rect x="890" y="495" width="380" height="100" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="900" y="526" text-anchor="start" font-weight="bold" font-size="13">computeLogValue(report, S, rmin, λ)</text>
+<text x="900" y="542" text-anchor="start" font-size="12">u = H(report ‖ S), uniform in [0, 1)</text>
+<text x="900" y="557" text-anchor="start" font-size="12">value = rmin + (1/λ)·(−ln(1 − u))</text>
+<text x="900" y="572" text-anchor="start" font-size="12">never below rmin, mean rmin + 1/λ</text>
+<circle cx="890" cy="495" r="12" style="fill:var(--dg-ink2)"/><text x="890" y="499" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">3</text>
+<polyline points="850,545 890,545" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-01)" style="fill:none;stroke:var(--dg-ink2)"/>
+<line x1="20" y1="625" x2="485" y2="625" stroke-dasharray="4 4" style="stroke:var(--dg-rule)"/>
+<line x1="505" y1="625" x2="1575" y2="625" stroke-dasharray="4 4" style="stroke:var(--dg-zone-s)"/>
+<text x="20" y="650" font-size="14" font-weight="bold">D. inclusion and settlement</text>
+<rect x="250" y="670" width="200" height="80" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="350" y="698.5" text-anchor="middle" font-weight="bold" font-size="13">Validator</text>
+<text x="350" y="714.5" text-anchor="middle" font-size="12">includes the top report,</text>
+<text x="350" y="729.5" text-anchor="middle" font-size="12">and the 2nd if v2 &gt; rmin</text>
+<circle cx="250" cy="670" r="12" style="fill:var(--dg-ink2)"/><text x="250" y="674" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">4</text>
+<rect x="520" y="670" width="330" height="80" rx="6" stroke-width="1.2" stroke-dasharray="5 3" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="530" y="698.5" text-anchor="start" font-weight="bold" font-size="13">included reports</text>
+<text x="530" y="714.5" text-anchor="start" font-size="12">top one, plus top two</text>
+<text x="530" y="729.5" text-anchor="start" font-size="12">if the 2nd clears rmin</text>
+<polyline points="450,710 520,710" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-01)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="485" y="703" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">block</text>
+<rect x="520" y="785" width="330" height="110" rx="6" stroke-width="1.2" stroke-dasharray="5 3" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="530" y="821" text-anchor="start" font-weight="bold" font-size="13">settleEpoch()</text>
+<text x="530" y="837" text-anchor="start" font-size="12">recompute every value from S</text>
+<text x="530" y="852" text-anchor="start" font-size="12">check the right reports went in</text>
+<text x="530" y="867" text-anchor="start" font-size="12">pay out</text>
+<circle cx="520" cy="785" r="12" style="fill:var(--dg-ink2)"/><text x="520" y="789" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">5</text>
+<rect x="890" y="785" width="380" height="110" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="900" y="821" text-anchor="start" font-weight="bold" font-size="13">findTopTwo(reports, S, rmin, λ)</text>
+<text x="900" y="837" text-anchor="start" font-size="12">one pass, O(N)</text>
+<text x="900" y="852" text-anchor="start" font-size="12">returns idx1, idx2, v1, v2</text>
+<text x="900" y="867" text-anchor="start" font-size="12">no valid 2nd → v2 = rmin</text>
+<polyline points="850,840 890,840" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-01)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="1310" y="760" width="270" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="1445" y="786" text-anchor="middle" font-weight="bold" font-size="13">Top publisher</text>
+<text x="1445" y="802" text-anchor="middle" font-size="12">v1 − v2   (mean 1/λ)</text>
+<rect x="1310" y="860" width="270" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="1445" y="886" text-anchor="middle" font-weight="bold" font-size="13">Validator</text>
+<text x="1445" y="902" text-anchor="middle" font-size="12">v2   (at least rmin)</text>
+<polyline points="1270,820 1290,820 1290,790 1310,790" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-01)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="1270,860 1290,860 1290,890 1310,890" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-01)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="1278" y="842" font-size="10.5" style="fill:var(--dg-ink2)">ETH</text>
+<rect x="20" y="790" width="400" height="140" rx="0" stroke-width="1.2" style="fill:var(--dg-note-f);stroke:var(--dg-note-s)"/>
+<text x="30" y="818.5" text-anchor="start" font-weight="bold" font-size="13">Why it holds</text>
+<text x="30" y="834.5" text-anchor="start" font-size="12">mean publisher pool 1/λ is the same for any N,</text>
+<text x="30" y="849.5" text-anchor="start" font-size="12">so more reporters never shrink it</text>
+<text x="30" y="864.5" text-anchor="start" font-size="12"></text>
+<text x="30" y="879.5" text-anchor="start" font-size="12">λ &gt; 1/rmin: the pool is below the</text>
+<text x="30" y="894.5" text-anchor="start" font-size="12">validator’s floor, so publishers can’t</text>
+<text x="30" y="909.5" text-anchor="start" font-size="12">pay the validator to skip a report</text>
+<text x="20" y="1005" font-size="11.5" style="fill:var(--dg-muted)">solid = call / transfer  ·  dashed boxes = designed, not yet in the repo  ·  numbers = order of events</text>
+</svg>

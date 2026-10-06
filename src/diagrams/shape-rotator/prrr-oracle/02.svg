@@ -1,0 +1,75 @@
+<svg viewBox="0 0 1600 580" role="img" aria-label="Inside the PrrrRandomValue library: the logarithmic value hashes report and S, scales to [0,1), takes −ln(1 − u) with range reduction and a degree-7 Taylor series, divides by λ and adds rmin; the polarized value pays rmax when u &lt; p and rmin otherwise; findTopTwo and two parameter checks support settlement and deployment." class="dg" xmlns="http://www.w3.org/2000/svg" style="fill:var(--dg-ink)">
+<defs><marker id="ah-shape-rotator-prrr-oracle-02" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--dg-ink2)"/></marker></defs>
+<rect width="1600" height="580" style="fill:var(--dg-bg)"/>
+<text x="20" y="50" font-size="14" font-weight="bold">logarithmic  ·  computeLogValue</text>
+<rect x="20" y="70" width="220" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="130" y="103.5" text-anchor="middle" font-weight="bold" font-size="13">inputs</text>
+<text x="130" y="119.5" text-anchor="middle" font-size="12">report, S  (bytes32)</text>
+<text x="130" y="134.5" text-anchor="middle" font-size="12">rmin (wei), λ</text>
+<rect x="278" y="70" width="220" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="388" y="103.5" text-anchor="middle" font-weight="bold" font-size="13">hashToUniform</text>
+<text x="388" y="119.5" text-anchor="middle" font-size="12">keccak256(report ‖ S)</text>
+<text x="388" y="134.5" text-anchor="middle" font-size="12">uniform in [0, 2^256)</text>
+<rect x="536" y="70" width="220" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="646" y="103.5" text-anchor="middle" font-weight="bold" font-size="13">scale to [0, 1)</text>
+<text x="646" y="119.5" text-anchor="middle" font-size="12">u = raw / (2^256 / 1e18)</text>
+<text x="646" y="134.5" text-anchor="middle" font-size="12">18-decimal fixed point</text>
+<rect x="794" y="70" width="220" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="904" y="103.5" text-anchor="middle" font-weight="bold" font-size="13">1 − u</text>
+<text x="904" y="119.5" text-anchor="middle" font-size="12">if it rounds to 0,</text>
+<text x="904" y="134.5" text-anchor="middle" font-size="12">clamp to 1e-18</text>
+<rect x="1052" y="70" width="220" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="1162" y="103.5" text-anchor="middle" font-weight="bold" font-size="13">_negLn(1 − u)</text>
+<text x="1162" y="119.5" text-anchor="middle" font-size="12">while x &lt; ½: x·2, add ln 2</text>
+<text x="1162" y="134.5" text-anchor="middle" font-size="12">then t + t²/2 + … + t⁷/7</text>
+<rect x="1310" y="70" width="220" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="1420" y="111" text-anchor="middle" font-weight="bold" font-size="13">value (wei)</text>
+<text x="1420" y="127" text-anchor="middle" font-size="12">rmin + (−ln(1 − u))·1e18 / λ</text>
+<polyline points="240,115 278,115" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="498,115 536,115" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="756,115 794,115" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="1014,115 1052,115" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="1272,115 1310,115" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="20" y="220" font-size="14" font-weight="bold">polarized  ·  computePolarizedValue</text>
+<rect x="20" y="240" width="220" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="130" y="273.5" text-anchor="middle" font-weight="bold" font-size="13">inputs</text>
+<text x="130" y="289.5" text-anchor="middle" font-size="12">report, S</text>
+<text x="130" y="304.5" text-anchor="middle" font-size="12">rmin &lt; rmax, 0 &lt; p ≤ 1e18</text>
+<rect x="278" y="240" width="220" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="388" y="281" text-anchor="middle" font-weight="bold" font-size="13">hashToUniform</text>
+<text x="388" y="297" text-anchor="middle" font-size="12">same hash</text>
+<rect x="536" y="240" width="220" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="646" y="281" text-anchor="middle" font-weight="bold" font-size="13">scale to [0, 1)</text>
+<text x="646" y="297" text-anchor="middle" font-size="12">same scaling</text>
+<rect x="794" y="240" width="220" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="904" y="281" text-anchor="middle" font-weight="bold" font-size="13">u &lt; p ?</text>
+<text x="904" y="297" text-anchor="middle" font-size="12">one threshold check</text>
+<polyline points="240,285 278,285" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="498,285 536,285" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="756,285 794,285" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="1052" y="230" width="220" height="46" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="1162" y="256.5" text-anchor="middle" font-size="12">yes → rmax   (chance p)</text>
+<rect x="1052" y="294" width="220" height="46" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="1162" y="320.5" text-anchor="middle" font-size="12">no → rmin</text>
+<polyline points="1014,270 1037,270 1037,253 1052,253" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="1014,305 1037,305 1037,317 1052,317" stroke-width="1.3" marker-end="url(#ah-shape-rotator-prrr-oracle-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="1310" y="240" width="220" height="90" rx="0" stroke-width="1.2" style="fill:var(--dg-note-f);stroke:var(--dg-note-s)"/>
+<text x="1420" y="273.5" text-anchor="middle" font-weight="bold" font-size="13">trade-off</text>
+<text x="1420" y="289.5" text-anchor="middle" font-size="12">payout capped at rmax,</text>
+<text x="1420" y="304.5" text-anchor="middle" font-size="12">but you must know Nmax</text>
+<text x="20" y="390" font-size="14" font-weight="bold">settlement helper and deploy-time checks</text>
+<rect x="20" y="410" width="500" height="110" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="30" y="446" text-anchor="start" font-weight="bold" font-size="13">findTopTwo(reports, S, rmin, λ)</text>
+<text x="30" y="462" text-anchor="start" font-size="12">computeLogValue for each report, one pass</text>
+<text x="30" y="477" text-anchor="start" font-size="12">keeps the highest two values and indexes</text>
+<text x="30" y="492" text-anchor="start" font-size="12">v2 ≤ rmin → idx2 = max uint, v2 = rmin</text>
+<rect x="550" y="410" width="500" height="110" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="560" y="453.5" text-anchor="start" font-weight="bold" font-size="13">checkSkippingResistance(rmin, λ)</text>
+<text x="560" y="469.5" text-anchor="start" font-size="12">λ &gt; 1e36 / rmin</text>
+<text x="560" y="484.5" text-anchor="start" font-size="12">mean publisher pool (1/λ) stays below rmin</text>
+<rect x="1080" y="410" width="500" height="110" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="1090" y="453.5" text-anchor="start" font-weight="bold" font-size="13">checkRewardMonotonicity(p, Nmax)</text>
+<text x="1090" y="469.5" text-anchor="start" font-size="12">p ≤ 1e18 / Nmax</text>
+<text x="1090" y="484.5" text-anchor="start" font-size="12">jackpot chance at most 1 in Nmax</text>
+<text x="20" y="565" font-size="11.5" style="fill:var(--dg-muted)">all functions are internal pure: the oracle contract links them in with using PrrrRandomValue</text>
+</svg>

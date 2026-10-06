@@ -1,0 +1,37 @@
+---
+import type { Article } from '../lib/writing';
+import { formatDate } from '../lib/content';
+interface Props {
+  article: Article;
+}
+const { article: a } = Astro.props;
+---
+
+<li data-topic={a.topic}>
+  <article class="row">
+    <p class="c-2 meta tabular"><time datetime={a.date}>{formatDate(a.date, 'day')}</time></p>
+    <div class="c-8 main">
+      <h3 class="title"><a href={a.url}>{a.title}</a></h3>
+      {a.excerpt && <p class="ex">{a.excerpt}</p>}
+    </div>
+    <p class="c-2 c-end meta">{a.platform}<br />{a.topic}</p>
+  </article>
+</li>
+
+<style>
+  .main {
+    display: grid;
+    gap: 4px;
+  }
+  .title a {
+    text-decoration: none;
+  }
+  .title a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-line);
+  }
+  .ex {
+    color: var(--ink-2);
+    font-size: 0.9375rem;
+  }
+</style>

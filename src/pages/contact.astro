@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const links = Object.values(site.links).filter((l) => l.url);
+---
+
+<Base title="Contact" description="Contact Favour (Ugbedeojo) Ajaye for smart contract security reviews and Rust work.">
+  <header class="page-head">
+    <p class="crumbs">Contact</p>
+    <h1>Contact</h1>
+    <p>For audits, security reviews and Rust roles, email is best.</p>
+  </header>
+
+  <section class="sec">
+    <p class="email"><a href={`mailto:${site.email}`}>{site.email}</a></p>
+
+    <dl class="links">
+      {links.map((l) => (
+        <div>
+          <dt class="label">{l.label}</dt>
+          <dd><a href={l.url}>{l.handle || l.url.replace(/^https?:\/\//, '')}</a></dd>
+        </div>
+      ))}
+      <div>
+        <dt class="label">CV</dt>
+        <dd>{site.cv ? <a href={site.cv}>Download (PDF)</a> : <span class="meta">On request by email</span>}</dd>
+      </div>
+    </dl>
+  </section>
+</Base>
+
+<style>
+  .email {
+    font-size: var(--step-3);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+    overflow-wrap: anywhere;
+  }
+  .links {
+    margin: 0;
+    border-top: 1.5px solid var(--rule-strong);
+  }
+  .links > div {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    gap: 16px;
+    padding-block: 11px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .links dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+</style>

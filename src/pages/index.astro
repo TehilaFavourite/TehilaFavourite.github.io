@@ -1,0 +1,154 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import SecurityRow from '../components/SecurityRow.astro';
+import RepoRow from '../components/RepoRow.astro';
+import ArticleRow from '../components/ArticleRow.astro';
+import { getCompanies, getSecurity, formatDate } from '../lib/content';
+import { getRepos } from '../lib/github';
+import { getArticles } from '../lib/writing';
+import site from '../data/site.json';
+import now from '../data/now.json';
+
+const security = (await getSecurity()).sort((a, b) => Number(b.data.featured) - Number(a.data.featured)).slice(0, 3);
+const companies = await getCompanies();
+const repos = await getRepos();
+const articles = (await getArticles()).slice(0, 4);
+const nowItems = [
+  ['Auditing', now.auditing],
+  ['Building', now.building],
+  ['Reading', now.reading],
+].filter(([, v]) => v);
+---
+
+<Base>
+  <section class="intro grid" aria-labelledby="intro-title">
+    <div class="lede">
+      <p class="label">Rust · smart contract security</p>
+      <h1 id="intro-title">{site.name}</h1>
+      <p class="big">
+        I'm a blockchain engineer with about four years of production experience building and auditing smart contracts. I build smart contracts, audit them for security, and write Rust, and I'm going deeper on all three every day.
+        I'm building toward formal verification of blockchain systems, with security for AI agents as my second focus. Further out are zero-knowledge proofs, cryptography, and embedded and IoT security.
+      </p>
+      <p>
+        I want to be the person who can prove that critical systems are secure, not just say they are.
+      </p>
+    </div>
+
+    <aside class="spec" aria-label="Summary">
+      <dl>
+        <div><dt class="label">Focus</dt><dd>Audits, Rust, formal verification</dd></div>
+        <div><dt class="label">Experience</dt><dd>~4 years, production EVM systems</dd></div>
+        <div><dt class="label">Based</dt><dd>{site.location}</dd></div>
+        <div><dt class="label">Contact</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+      </dl>
+      {nowItems.length > 0 && (
+        <div class="now">
+          <p class="label">Now · <time datetime={now.updated}>{formatDate(now.updated, 'day')}</time></p>
+          <dl>
+            {nowItems.map(([k, v]) => (
+              <div><dt class="meta">{k}</dt><dd>{v}</dd></div>
+            ))}
+          </dl>
+        </div>
+      )}
+    </aside>
+  </section>
+
+  <section class="sec" aria-labelledby="h-work">
+    <SectionHead id="h-work" num="01" title="Work" href="/work" linkText="All work" />
+    <ul class="rows">
+      {companies.map((c) => (
+        <li>
+          <div class="row">
+            <p class="c-4 title"><a href={`/work/${c.slug}`}>{c.name}</a></p>
+            <p class="c-8 projects">
+              {c.projects.map((p, i) => (
+                <>
+                  {i > 0 && <span class="sep" aria-hidden="true"> / </span>}
+                  <a href={`/work/${c.slug}/${p.slug}`}>{p.name}</a>
+                </>
+              ))}
+            </p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="sec" aria-labelledby="h-projects">
+    <SectionHead id="h-projects" num="02" title="Projects" href="/projects" linkText="All projects" />
+    <ul class="rows">{repos.map((r) => <RepoRow repo={r} />)}</ul>
+  </section>
+
+  <section class="sec" aria-labelledby="h-writing">
+    <SectionHead id="h-writing" num="03" title="Latest writing" href="/writing" linkText="All writing" />
+    <ul class="rows">{articles.map((a) => <ArticleRow article={a} />)}</ul>
+  </section>
+
+  <section class="sec" aria-labelledby="h-security">
+    <SectionHead id="h-security" num="04" title="Security work" href="/security" linkText="All security work" />
+    <ul class="rows">{security.map((e) => <SecurityRow entry={e} showType />)}</ul>
+  </section>
+</Base>
+
+<style>
+  .intro {
+    padding-block: 64px 24px;
+    row-gap: 40px;
+  }
+  .lede {
+    grid-column: span 8;
+    display: grid;
+    gap: 16px;
+    align-content: start;
+  }
+  h1 {
+    font-size: var(--step-4);
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+  }
+  .big {
+    font-size: var(--step-1);
+    line-height: 1.5;
+  }
+  .spec {
+    grid-column: span 4;
+    border-top: 1.5px solid var(--rule-strong);
+    align-self: start;
+  }
+  .spec dl {
+    margin: 0;
+  }
+  .spec dl > div {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 12px;
+    padding-block: 9px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .spec dd {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+  .now {
+    margin-top: 28px;
+  }
+  .now .label {
+    color: var(--accent);
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .projects {
+    max-width: none;
+  }
+  .sep {
+    color: var(--muted);
+  }
+  @media (max-width: 900px) {
+    .lede,
+    .spec {
+      grid-column: span 12;
+    }
+  }
+</style>

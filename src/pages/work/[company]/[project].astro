@@ -1,0 +1,38 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Diagram from '../../../components/Diagram.astro';
+import { getCompanies } from '../../../lib/content';
+
+export async function getStaticPaths() {
+  const companies = await getCompanies();
+  return companies.flatMap((company) =>
+    company.projects.map((project) => ({
+      params: { company: company.slug, project: project.slug },
+      props: { company, project },
+    })),
+  );
+}
+
+const { company: c, project: p } = Astro.props;
+---
+
+<Base title={`${p.name} architecture`} description={`Architecture of ${p.name} at ${c.name}.`}>
+  <header class="page-head">
+    <p class="crumbs"><a href="/work">Work</a> / <a href={`/work/${c.slug}`}>{c.name}</a> / {p.name}</p>
+    <h1>{p.name}</h1>
+    <p class="meta line">{[p.role, p.stack].filter(Boolean).join(' · ')}</p>
+  </header>
+
+  <div class="figs">
+    {p.diagrams.map((d, i) => <Diagram file={d.file} title={d.title} index={i + 1} />)}
+  </div>
+</Base>
+
+<style>
+  .line {
+    max-width: none;
+  }
+  .figs {
+    margin-top: 32px;
+  }
+</style>

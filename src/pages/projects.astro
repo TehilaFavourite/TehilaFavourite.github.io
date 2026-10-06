@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import RepoRow from '../components/RepoRow.astro';
+import { getRepos, tracks } from '../lib/github';
+
+const repos = await getRepos();
+---
+
+<Base title="Projects" description="Rust and open-source projects by Favour Ajaye.">
+  <header class="page-head">
+    <p class="crumbs">Projects</p>
+    <h1>Rust and open source</h1>
+    <p>My own projects, pulled from GitHub at build time.</p>
+  </header>
+
+  <section class="sec" aria-labelledby="h-current">
+    <SectionHead id="h-current" num="01" title="Current" href="https://github.com/tehilafavourite" linkText="GitHub" />
+    <div class="row cols label" aria-hidden="true">
+      <span class="c-2">Status</span>
+      <span class="c-7">Project</span>
+      <span class="c-2">Stack</span>
+      <span class="c-1 c-end">Links</span>
+    </div>
+    <ul class="rows">{repos.map((r) => <RepoRow repo={r} />)}</ul>
+  </section>
+
+  <section class="sec" aria-labelledby="h-tracks">
+    <SectionHead id="h-tracks" num="02" title="Next tracks" />
+    <ul class="rows">
+      {tracks.map((t) => (
+        <li>
+          <div class="row">
+            <p class="c-2 meta">planned</p>
+            <p class="c-4 title">{t.name}</p>
+            <p class="c-6 note">{t.note}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .cols {
+    padding-bottom: 6px;
+  }
+  .c-1 {
+    grid-column: span 1;
+  }
+  .note {
+    color: var(--ink-2);
+  }
+  @media (max-width: 760px) {
+    .cols {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,21 @@
+{
+  "name": "Favour (Ugbedeojo) Ajaye",
+  "shortName": "Favour Ajaye",
+  "title": "Rust and smart contract security engineer",
+  "location": "United Kingdom",
+  "description": "Favour (Ugbedeojo) Ajaye, Rust and smart contract security engineer in the UK. Audits, Rust, formal verification, and four years of production blockchain systems.",
+  "email": "tehilafavourite@gmail.com",
+  "cv": "",
+  "links": {
+    "github": { "label": "GitHub", "handle": "tehilafavourite", "url": "https://github.com/tehilafavourite" },
+    "linkedin": { "label": "LinkedIn", "handle": "Favour (Ugbedeojo) Ajaye", "url": "https://www.linkedin.com/in/ajaye-favour-blockchain-developer/" },
+    "x": { "label": "X", "handle": "@teheelaa", "url": "https://x.com/teheelaa" },
+    "medium": { "label": "Medium", "handle": "@favoriteblockchain", "url": "https://medium.com/@favoriteblockchain" },
+    "hashnode": { "label": "Hashnode", "handle": "", "url": "" },
+    "substack": { "label": "Substack", "handle": "", "url": "" },
+    "codehawks": { "label": "CodeHawks", "handle": "", "url": "" },
+    "code4rena": { "label": "Code4rena", "handle": "", "url": "" },
+    "sherlock": { "label": "Sherlock", "handle": "", "url": "" },
+    "cantina": { "label": "Cantina", "handle": "", "url": "" }
+  }
+}

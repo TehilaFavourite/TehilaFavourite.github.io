@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import ArticleRow from '../components/ArticleRow.astro';
+import { getArticles } from '../lib/writing';
+import site from '../data/site.json';
+
+const articles = await getArticles();
+const topics = [...new Set(articles.map((a) => a.topic))];
+const sources = Object.values(site.links).filter((l) => ['Medium', 'Hashnode', 'Substack'].includes(l.label) && l.url);
+---
+
+<Base title="Writing" description="Articles on smart contract security and Rust for Solidity developers by Favour Ajaye.">
+  <header class="page-head">
+    <p class="crumbs">Writing</p>
+    <h1>Writing</h1>
+    <p>
+      Articles on smart contract security and Rust, including the Rust for Solidity Developers series. Each one links to
+      the original on
+      {sources.map((s, i) => <>{i > 0 && (i === sources.length - 1 ? ' and ' : ', ')}<a href={s.url}>{s.label}</a></>)}.
+    </p>
+  </header>
+
+  <div class="filters" role="group" aria-label="Filter by topic" hidden>
+    <button type="button" aria-pressed="true" data-topic="">All <span class="meta">{articles.length}</span></button>
+    {topics.map((t) => (
+      <button type="button" aria-pressed="false" data-topic={t}>
+        {t} <span class="meta">{articles.filter((a) => a.topic === t).length}</span>
+      </button>
+    ))}
+  </div>
+
+  <ul class="rows list">{articles.map((a) => <ArticleRow article={a} />)}</ul>
+</Base>
+
+<script>
+  const group = document.querySelector<HTMLElement>('.filters');
+  const items = document.querySelectorAll<HTMLElement>('.list > li');
+  if (group) {
+    group.hidden = false;
+    group.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('button');
+      if (!btn) return;
+      const topic = btn.dataset.topic ?? '';
+      group.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      items.forEach((li) => (li.hidden = Boolean(topic) && li.dataset.topic !== topic));
+    });
+  }
+</script>
+
+<style>
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-block: 28px 20px;
+  }
+  .filters[hidden] {
+    display: none;
+  }
+  .filters button {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    color: var(--ink-2);
+    background: none;
+    border: 1px solid var(--rule);
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .filters button:hover {
+    border-color: var(--ink);
+  }
+  .filters button[aria-pressed='true'] {
+    color: var(--ink);
+    border-color: var(--ink);
+    box-shadow: inset 0 -2px 0 var(--accent-line);
+  }
+  .list {
+    margin-top: 8px;
+  }
+</style>

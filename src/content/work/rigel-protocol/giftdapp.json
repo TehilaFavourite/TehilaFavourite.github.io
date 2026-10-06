@@ -1,0 +1,10 @@
+{
+  "company": "rigel-protocol",
+  "name": "GiftDapp",
+  "role": "",
+  "stack": "Solidity · Truffle · React · web3.js · GraphQL",
+  "order": 1,
+  "diagrams": [
+    { "file": "rigel-protocol/giftdapp/01", "title": "Campaign, spin and payout" }
+  ]
+}

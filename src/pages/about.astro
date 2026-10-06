@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import { getCompanies } from '../lib/content';
+import site from '../data/site.json';
+
+const companies = await getCompanies();
+const skills = [
+  ['Languages', 'Solidity, Rust, Python, JavaScript / TypeScript'],
+  ['Security', 'Manual review, proof-of-concept exploits, fuzz testing, static analysis'],
+  ['Contract patterns', 'UUPS and transparent proxies, minimal clones, timelocks, access control, EIP-712 / EIP-1271 signatures, Chainlink feeds'],
+  ['Tooling', 'Foundry, Hardhat, Truffle, OpenZeppelin'],
+  ['Chains', 'Ethereum, Optimism, Polygon, BNB Smart Chain'],
+  ['Geospatial', 'Map architecture: Google Maps Platform, MQTT, Redis GEO, Tile38, PostGIS'],
+];
+---
+
+<Base title="About" description="Background, skills and current focus of Favour (Ugbedeojo) Ajaye.">
+  <header class="page-head">
+    <p class="crumbs">About</p>
+    <h1>About</h1>
+  </header>
+
+  <section class="sec" aria-labelledby="h-background">
+    <SectionHead id="h-background" num="01" title="Background" />
+    <div class="prose">
+      <p>
+        I studied Chemical Engineering and moved into software through blockchain. I have written Solidity for around
+        four years and shipped production systems on Ethereum-compatible chains: token sales and vesting, escrow and
+        dispute systems, and carbon credit issuance, including contracts running on Optimism mainnet.
+      </p>
+      <p>
+        Alongside building, I review contracts for security. My most recent review covered five contracts and found 35
+        issues, each fixed and proven with a test that reproduces the attack.
+      </p>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-focus">
+    <SectionHead id="h-focus" num="02" title="Focus" />
+    <dl class="kv">
+      <div><dt class="label">Now</dt><dd>Smart contract security audits, Rust, formal verification</dd></div>
+      <div><dt class="label">Longer term</dt><dd>Zero-knowledge proofs, cryptography, embedded and IoT security</dd></div>
+    </dl>
+  </section>
+
+  <section class="sec" aria-labelledby="h-skills">
+    <SectionHead id="h-skills" num="03" title="Skills" />
+    <dl class="kv">{skills.map(([k, v]) => <div><dt class="label">{k}</dt><dd>{v}</dd></div>)}</dl>
+  </section>
+
+  <section class="sec" aria-labelledby="h-experience">
+    <SectionHead id="h-experience" num="04" title="Experience" href="/work" linkText="Work" />
+    <dl class="kv">
+      {companies.map((c) => (
+        <div>
+          <dt class="label">{c.period || c.name}</dt>
+          <dd>
+            {c.period && <span>{c.name} · </span>}
+            {c.role || 'Engineer'}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <section class="sec" aria-labelledby="h-education">
+    <SectionHead id="h-education" num="05" title="Education" />
+    <dl class="kv">
+      <div><dt class="label">Degree</dt><dd>Chemical Engineering</dd></div>
+    </dl>
+    <p class="cv meta">
+      {site.cv ? <a href={site.cv}>Download CV (PDF)</a> : <span>CV available on request: <a href={`mailto:${site.email}`}>{site.email}</a></span>}
+    </p>
+  </section>
+</Base>
+
+<style>
+  .prose {
+    display: grid;
+    gap: 14px;
+  }
+  .kv {
+    margin: 0;
+  }
+  .kv > div {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--col-gap);
+    padding-block: 11px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .kv > div:first-child {
+    border-top: 1px solid var(--rule);
+  }
+  .kv dt {
+    grid-column: span 3;
+  }
+  .kv dd {
+    grid-column: span 9;
+    margin: 0;
+  }
+  .cv {
+    margin-top: 18px;
+  }
+  @media (max-width: 760px) {
+    .kv dt,
+    .kv dd {
+      grid-column: span 12;
+    }
+  }
+</style>

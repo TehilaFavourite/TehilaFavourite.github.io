@@ -1,0 +1,51 @@
+---
+import type { Repo } from '../lib/github';
+interface Props {
+  repo: Repo;
+}
+const { repo } = Astro.props;
+---
+
+<li>
+  <article class="row">
+    <p class="c-2 meta status">{repo.status}</p>
+    <div class="c-7 main">
+      <h3 class="title mono-title">{repo.name}</h3>
+      <p>{repo.description}</p>
+    </div>
+    <p class="c-2 meta">{repo.stack || repo.language}</p>
+    <p class="c-1 c-end meta links">
+      <a href={repo.url}>Repo</a>
+      {repo.demo && <a href={repo.demo}>Demo</a>}
+    </p>
+  </article>
+</li>
+
+<style>
+  .main {
+    display: grid;
+    gap: 4px;
+  }
+  .mono-title {
+    font-family: var(--mono);
+    font-size: 1.0625rem;
+    font-weight: 500;
+  }
+  .status::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 8px;
+    border: 1.5px solid var(--ink-2);
+    vertical-align: 1px;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .c-1 {
+    grid-column: span 1;
+  }
+</style>

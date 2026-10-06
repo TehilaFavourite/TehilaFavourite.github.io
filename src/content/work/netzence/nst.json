@@ -1,0 +1,11 @@
+{
+  "company": "netzence",
+  "name": "NST",
+  "role": "Smart contracts and security review",
+  "stack": "Solidity · Foundry · OpenZeppelin · Chainlink · Optimism Sepolia",
+  "order": 2,
+  "diagrams": [
+    { "file": "netzence/nst/01", "title": "Where the 1 billion tokens go" },
+    { "file": "netzence/nst/02", "title": "Two ways to buy: public sale and SAFT" }
+  ]
+}

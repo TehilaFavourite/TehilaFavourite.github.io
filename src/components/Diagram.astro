@@ -1,0 +1,202 @@
+---
+import { diagram } from '../lib/content';
+
+interface Props {
+  file: string;
+  title: string;
+  index: number;
+}
+const { file, title, index } = Astro.props;
+const svg = diagram(file);
+const id = `dg-${index}`;
+---
+
+<figure class="dg-fig" aria-labelledby={`${id}-cap`}>
+  <figcaption class="dg-cap">
+    <span class="meta">Fig. {index}</span>
+    <span id={`${id}-cap`} class="dg-title">{title}</span>
+    <span class="dg-tools" role="toolbar" aria-label={`Zoom controls for ${title}`}>
+      <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+      <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
+      <button type="button" data-zoom="reset" aria-label="Reset zoom">Fit</button>
+      <span class="dg-level meta" aria-live="polite">100%</span>
+    </span>
+  </figcaption>
+  <div class="dg-view" tabindex="0" aria-label={`${title}. Drag to pan, plus and minus keys to zoom.`}>
+    <div class="dg-canvas" set:html={svg} />
+  </div>
+  <p class="dg-hint meta">Drag to pan · Ctrl/⌘ + scroll or pinch to zoom · +/− keys</p>
+</figure>
+
+<script>
+  const MIN = 1;
+  const MAX = 6;
+
+  for (const fig of document.querySelectorAll<HTMLElement>('.dg-fig')) {
+    const view = fig.querySelector<HTMLElement>('.dg-view')!;
+    const canvas = fig.querySelector<HTMLElement>('.dg-canvas')!;
+    const level = fig.querySelector<HTMLElement>('.dg-level')!;
+    let s = 1, x = 0, y = 0;
+
+    const clamp = () => {
+      const w = view.clientWidth, h = view.clientHeight;
+      x = Math.min(0, Math.max(w - w * s, x));
+      y = Math.min(0, Math.max(h - h * s, y));
+    };
+    const apply = () => {
+      clamp();
+      canvas.style.transform = `translate(${x}px, ${y}px) scale(${s})`;
+      view.classList.toggle('zoomed', s > 1);
+      level.textContent = `${Math.round(s * 100)}%`;
+    };
+    const zoomAt = (factor: number, cx = view.clientWidth / 2, cy = view.clientHeight / 2) => {
+      const next = Math.min(MAX, Math.max(MIN, s * factor));
+      x = cx - ((cx - x) * next) / s;
+      y = cy - ((cy - y) * next) / s;
+      s = next;
+      apply();
+    };
+
+    fig.querySelectorAll<HTMLButtonElement>('[data-zoom]').forEach((b) =>
+      b.addEventListener('click', () => {
+        if (b.dataset.zoom === 'in') zoomAt(1.4);
+        else if (b.dataset.zoom === 'out') zoomAt(1 / 1.4);
+        else { s = 1; x = 0; y = 0; apply(); }
+      }),
+    );
+
+    view.addEventListener('wheel', (e) => {
+      if (!e.ctrlKey && !e.metaKey) return;
+      e.preventDefault();
+      const r = view.getBoundingClientRect();
+      zoomAt(e.deltaY < 0 ? 1.15 : 1 / 1.15, e.clientX - r.left, e.clientY - r.top);
+    }, { passive: false });
+
+    const pointers = new Map<number, { x: number; y: number }>();
+    let pinch = 0;
+    view.addEventListener('pointerdown', (e) => {
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      view.setPointerCapture(e.pointerId);
+    });
+    view.addEventListener('pointermove', (e) => {
+      const prev = pointers.get(e.pointerId);
+      if (!prev) return;
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (pinch) {
+          const r = view.getBoundingClientRect();
+          zoomAt(d / pinch, (a.x + b.x) / 2 - r.left, (a.y + b.y) / 2 - r.top);
+        }
+        pinch = d;
+      } else if (s > 1) {
+        x += e.clientX - prev.x;
+        y += e.clientY - prev.y;
+        apply();
+      }
+    });
+    const end = (e: PointerEvent) => {
+      pointers.delete(e.pointerId);
+      if (pointers.size < 2) pinch = 0;
+    };
+    view.addEventListener('pointerup', end);
+    view.addEventListener('pointercancel', end);
+
+    view.addEventListener('keydown', (e) => {
+      const step = 60;
+      const keys: Record<string, () => void> = {
+        '+': () => zoomAt(1.4),
+        '=': () => zoomAt(1.4),
+        '-': () => zoomAt(1 / 1.4),
+        '0': () => { s = 1; x = 0; y = 0; apply(); },
+        ArrowLeft: () => { x += step; apply(); },
+        ArrowRight: () => { x -= step; apply(); },
+        ArrowUp: () => { y += step; apply(); },
+        ArrowDown: () => { y -= step; apply(); },
+      };
+      if (keys[e.key] && (s > 1 || !e.key.startsWith('Arrow'))) {
+        e.preventDefault();
+        keys[e.key]();
+      }
+    });
+
+    window.addEventListener('resize', apply);
+  }
+</script>
+
+<style>
+  .dg-fig {
+    margin: 0 0 56px;
+  }
+  .dg-cap {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: baseline;
+    border-top: 1.5px solid var(--rule-strong);
+    padding-block: 10px;
+  }
+  .dg-title {
+    font-weight: 600;
+    font-size: var(--step-1);
+  }
+  .dg-tools {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .dg-tools button {
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    min-width: 34px;
+    height: 30px;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    cursor: pointer;
+  }
+  .dg-tools button:hover {
+    border-color: var(--ink);
+  }
+  .dg-level {
+    min-width: 4ch;
+    text-align: right;
+  }
+  .dg-view {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    background: var(--dg-bg);
+    touch-action: pan-y;
+    user-select: none;
+  }
+  .dg-view.zoomed {
+    cursor: grab;
+    touch-action: none;
+  }
+  .dg-view.zoomed:active {
+    cursor: grabbing;
+  }
+  .dg-canvas {
+    transform-origin: 0 0;
+  }
+  .dg-canvas :global(svg) {
+    display: block;
+    width: 100%;
+    height: auto;
+    font-family: var(--sans);
+  }
+  .dg-canvas :global(svg > rect:first-of-type) {
+    fill: var(--dg-bg) !important;
+  }
+  .dg-hint {
+    margin-top: 8px;
+  }
+  @media (max-width: 760px) {
+    .dg-cap {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+  }
+</style>

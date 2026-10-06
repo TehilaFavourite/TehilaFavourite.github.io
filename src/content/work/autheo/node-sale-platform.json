@@ -1,0 +1,11 @@
+{
+  "company": "autheo",
+  "name": "Node Sale Platform",
+  "role": "",
+  "stack": "Solidity 0.8.26 · OpenZeppelin upgradeable (UUPS) · ERC-721 · Chainlink · USDC / USDT",
+  "order": 1,
+  "diagrams": [
+    { "file": "autheo/node-sale-platform/01", "title": "Buying a node licence" },
+    { "file": "autheo/node-sale-platform/02", "title": "Contracts and roles" }
+  ]
+}

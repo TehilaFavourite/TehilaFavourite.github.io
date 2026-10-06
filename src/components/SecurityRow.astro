@@ -1,0 +1,56 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Severity from './Severity.astro';
+import { formatDate } from '../lib/content';
+
+interface Props {
+  entry: CollectionEntry<'security'>;
+  showType?: boolean;
+}
+const { entry, showType = false } = Astro.props;
+const d = entry.data;
+const typeName = { contest: 'Contest', report: 'Audit report', writeup: 'Write-up', oss: 'Open source' }[d.type];
+const body = entry.body?.trim();
+---
+
+<li>
+  <article class="row">
+    <p class="c-2 meta tabular"><time datetime={d.date.toISOString().slice(0, 10)}>{formatDate(d.date)}</time></p>
+    <div class="c-6 main">
+      <h3 class="title">{d.title}</h3>
+      <p class="meta">
+        {showType && <span>{typeName} · </span>}
+        {d.label && <span>{d.label} · </span>}
+        <span>{d.platform}</span>
+        <span> · {d.role}</span>
+      </p>
+      {d.scope && <p class="scope">{d.scope}</p>}
+      {body && <p class="scope">{body}</p>}
+      {d.tags.length > 0 && (
+        <ul class="tags">
+          {d.tags.map((t) => <li>{t}</li>)}
+        </ul>
+      )}
+    </div>
+    <div class="c-3">
+      <Severity counts={d.severity} pending={d.status === 'pending'} />
+    </div>
+    <p class="c-1 c-end meta">
+      {d.link ? <a href={d.link}>{d.linkLabel ?? 'Report'}</a> : d.status === 'pending' ? '' : <span>Private</span>}
+    </p>
+  </article>
+</li>
+
+<style>
+  .main {
+    display: grid;
+    gap: 6px;
+  }
+  .scope {
+    color: var(--ink-2);
+    font-size: 0.9375rem;
+  }
+  .c-1 {
+    grid-column: span 1;
+  }
+</style>

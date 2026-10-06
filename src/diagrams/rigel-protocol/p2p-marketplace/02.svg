@@ -1,0 +1,172 @@
+<svg viewBox="0 0 1600 1085" role="img" aria-label="P2P disputes: council members stake RGP or NFTs for a rank, the backend admin raises a dispute on-chain, council members join and vote, the majority side gets the escrow and voters share the dispute fee." class="dg" xmlns="http://www.w3.org/2000/svg" style="fill:var(--dg-ink)">
+<defs><marker id="ah-rigel-protocol-p2p-marketplace-02" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--dg-ink2)"/></marker></defs>
+<rect width="1600" height="1085" style="fill:var(--dg-bg)"/>
+<rect x="800" y="78" width="790" height="1000" rx="14" stroke-width="1.5" stroke-dasharray="8 5" style="fill:var(--dg-zone-f);stroke:var(--dg-zone-s)"/>
+<text x="818" y="100" font-size="13" font-weight="bold" style="fill:var(--dg-zone-t)">on-chain  (BSC / Polygon)</text>
+<text x="125" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Users</text>
+<text x="375" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">p2p dapp</text>
+<text x="645" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">p2p-back-end</text>
+<text x="960" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">P2P contract</text>
+<text x="1250" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">RigelCouncilMemberStake</text>
+<text x="1490" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">RGP / NFTs</text>
+<text x="20" y="160" font-size="14" font-weight="bold">A. become a council member</text>
+<rect x="20" y="172" width="210" height="70" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="125" y="195.5" text-anchor="middle" font-weight="bold" font-size="13">Council member</text>
+<text x="125" y="211.5" text-anchor="middle" font-size="12">stakes RGP, or a merchant</text>
+<text x="125" y="226.5" text-anchor="middle" font-size="12">stakes a SmartSwap NFT</text>
+<circle cx="20" cy="172" r="12" style="fill:var(--dg-ink2)"/><text x="20" y="176" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">1</text>
+<rect x="260" y="165" width="230" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-web-f);stroke:var(--dg-web-s)"/>
+<text x="375" y="191" text-anchor="middle" font-weight="bold" font-size="13">Council registration</text>
+<text x="375" y="207" text-anchor="middle" font-size="12">approve RGP</text>
+<text x="375" y="222" text-anchor="middle" font-size="12">earnRGPBadge(badgeID, amt)</text>
+<text x="375" y="237" text-anchor="middle" font-size="12">or earnNFTBadge(rank, id)</text>
+<polyline points="230,205 260,205" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="1120" y="160" width="260" height="118" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="1250" y="192.5" text-anchor="middle" font-weight="bold" font-size="13">stake → badge</text>
+<text x="1250" y="208.5" text-anchor="middle" font-size="12">stake ≥ badge minimum</text>
+<text x="1250" y="223.5" text-anchor="middle" font-size="12">rank sets maxAmountToJoin</text>
+<text x="1250" y="238.5" text-anchor="middle" font-size="12">NFT: Legendary / Diamond</text>
+<text x="1250" y="253.5" text-anchor="middle" font-size="12">map to a council rank</text>
+<polyline points="490,200 1120,200" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="655" y="193" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">earnRGPBadge / earnNFTBadge</text>
+<rect x="1405" y="176" width="170" height="48" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="1490" y="196" text-anchor="middle" font-size="12">RGP or ERC-1155</text>
+<text x="1490" y="211" text-anchor="middle" font-size="12">→ staking contract</text>
+<polyline points="1380,200 1405,200" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="520" y="266" width="250" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="645" y="284.5" text-anchor="middle" font-weight="bold" font-size="13">updateRank</text>
+<text x="645" y="300.5" text-anchor="middle" font-size="12">reads getMerchantStore</text>
+<text x="645" y="315.5" text-anchor="middle" font-size="12">saves rank on the user</text>
+<polyline points="375,255 375,296 520,296" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="770,296 1250,296 1250,278" stroke-width="1.3" stroke-dasharray="6 4" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="1010" y="289" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">view</text>
+<rect x="20" y="262" width="210" height="92" rx="0" stroke-width="1.2" style="fill:var(--dg-note-f);stroke:var(--dg-note-s)"/>
+<text x="125" y="289" text-anchor="middle" font-size="12">ranks (RGP staked):</text>
+<text x="125" y="304" text-anchor="middle" font-size="12">Royal Executor 10,000</text>
+<text x="125" y="319" text-anchor="middle" font-size="12">Vizier 4,000 · Earl 2,500</text>
+<text x="125" y="334" text-anchor="middle" font-size="12">Mage 1,500 · Cadet 500</text>
+<line x1="20" y1="385" x2="790" y2="385" stroke-dasharray="4 4" style="stroke:var(--dg-rule)"/>
+<line x1="810" y1="385" x2="1575" y2="385" stroke-dasharray="4 4" style="stroke:var(--dg-zone-s)"/>
+<text x="20" y="412" font-size="14" font-weight="bold">B. dispute</text>
+<rect x="20" y="425" width="210" height="64" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="125" y="445.5" text-anchor="middle" font-weight="bold" font-size="13">Buyer or seller</text>
+<text x="125" y="461.5" text-anchor="middle" font-size="12">opens a dispute</text>
+<text x="125" y="476.5" text-anchor="middle" font-size="12">with a reason and proofs</text>
+<circle cx="20" cy="425" r="12" style="fill:var(--dg-ink2)"/><text x="20" y="429" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">2</text>
+<rect x="260" y="425" width="230" height="64" rx="6" stroke-width="1.2" style="fill:var(--dg-web-f);stroke:var(--dg-web-s)"/>
+<text x="375" y="445.5" text-anchor="middle" font-weight="bold" font-size="13">Dispute form</text>
+<text x="375" y="461.5" text-anchor="middle" font-size="12">createDispute mutation</text>
+<text x="375" y="476.5" text-anchor="middle" font-size="12">uploads proof images</text>
+<polyline points="230,455 260,455" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="520" y="415" width="250" height="98" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="645" y="445" text-anchor="middle" font-weight="bold" font-size="13">createDispute</text>
+<text x="645" y="461" text-anchor="middle" font-size="12">admin wallet:</text>
+<text x="645" y="476" text-anchor="middle" font-size="12">raiseDispute(id, who)</text>
+<text x="645" y="491" text-anchor="middle" font-size="12">Dispute doc: reason, proofs</text>
+<polyline points="490,455 520,455" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="825" y="408" width="270" height="112" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="835" y="437.5" text-anchor="start" font-weight="bold" font-size="13">raiseDispute()   onlyAdmin</text>
+<text x="835" y="453.5" text-anchor="start" font-size="12">buyer: fee taken from escrow</text>
+<text x="835" y="468.5" text-anchor="start" font-size="12">seller: pays the fee in RGP</text>
+<text x="835" y="483.5" text-anchor="start" font-size="12">isOnDispute = true</text>
+<text x="835" y="498.5" text-anchor="start" font-size="12">votes open at now + 600s</text>
+<polyline points="770,455 825,455" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="20" y="530" width="210" height="50" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="125" y="551" text-anchor="middle" font-weight="bold" font-size="13">Both sides reply</text>
+<text x="125" y="567" text-anchor="middle" font-size="12">with evidence</text>
+<circle cx="20" cy="530" r="12" style="fill:var(--dg-ink2)"/><text x="20" y="534" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">3</text>
+<polyline points="230,555 520,555" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="375" y="548" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">add*PersonResponse</text>
+<rect x="520" y="530" width="250" height="50" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="645" y="551" text-anchor="middle" font-size="12">responses + appeal</text>
+<text x="645" y="566" text-anchor="middle" font-size="12">stored on the Dispute doc</text>
+<rect x="20" y="610" width="210" height="64" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="125" y="638" text-anchor="middle" font-weight="bold" font-size="13">Council member</text>
+<text x="125" y="654" text-anchor="middle" font-size="12">joins the dispute</text>
+<circle cx="20" cy="610" r="12" style="fill:var(--dg-ink2)"/><text x="20" y="614" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">4</text>
+<rect x="260" y="606" width="230" height="72" rx="6" stroke-width="1.2" style="fill:var(--dg-web-f);stroke:var(--dg-web-s)"/>
+<text x="375" y="630.5" text-anchor="middle" font-weight="bold" font-size="13">Open disputes list</text>
+<text x="375" y="646.5" text-anchor="middle" font-size="12">joinDispute(id)</text>
+<text x="375" y="661.5" text-anchor="middle" font-size="12">+ joinDispute mutation</text>
+<polyline points="230,640 260,640" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="825" y="598" width="270" height="122" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="835" y="632.5" text-anchor="start" font-weight="bold" font-size="13">joinDispute()</text>
+<text x="835" y="648.5" text-anchor="start" font-size="12">not a party, not locked</text>
+<text x="835" y="663.5" text-anchor="start" font-size="12">getMyRank(me) ≥ trade amount</text>
+<text x="835" y="678.5" text-anchor="start" font-size="12">max 3 members</text>
+<text x="835" y="693.5" text-anchor="start" font-size="12">full → voting closes in 600s</text>
+<polyline points="490,624 825,624" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="655" y="617" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">joinDispute</text>
+<rect x="1120" y="640" width="260" height="44" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="1250" y="658" text-anchor="middle" font-size="12">getMyRank: how big a dispute</text>
+<text x="1250" y="673" text-anchor="middle" font-size="12">this member may judge</text>
+<polyline points="1095,662 1120,662" stroke-width="1.3" stroke-dasharray="6 4" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="520" y="652" width="250" height="42" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="645" y="676.5" text-anchor="middle" font-size="12">JoinedMembers on the Dispute</text>
+<polyline points="490,668 520,668" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="20" y="735" width="210" height="64" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="125" y="763" text-anchor="middle" font-weight="bold" font-size="13">Council member</text>
+<text x="125" y="779" text-anchor="middle" font-size="12">votes for a side</text>
+<circle cx="20" cy="735" r="12" style="fill:var(--dg-ink2)"/><text x="20" y="739" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">5</text>
+<rect x="260" y="735" width="230" height="52" rx="6" stroke-width="1.2" style="fill:var(--dg-web-f);stroke:var(--dg-web-s)"/>
+<text x="375" y="757" text-anchor="middle" font-size="12">castVote(id, who)</text>
+<text x="375" y="772" text-anchor="middle" font-size="12">+ voteDispute</text>
+<polyline points="230,760 260,760" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="825" y="735" width="270" height="134" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="835" y="768" text-anchor="start" font-weight="bold" font-size="13">castVote()</text>
+<text x="835" y="784" text-anchor="start" font-size="12">first side to ⌊n/2⌋+1 votes wins</text>
+<text x="835" y="799" text-anchor="start" font-size="12">escrow → winner</text>
+<text x="835" y="814" text-anchor="start" font-size="12">fee: 20% dev, 80% winning voters</text>
+<text x="835" y="829" text-anchor="start" font-size="12">losers: wrong-vote debt + count</text>
+<text x="835" y="844" text-anchor="start" font-size="12">voters wait 24h to withdraw</text>
+<polyline points="490,752 825,752" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="655" y="745" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">castVote</text>
+<rect x="520" y="775" width="250" height="50" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="645" y="796" text-anchor="middle" font-size="12">voteDispute → CouncilVote</text>
+<text x="645" y="811" text-anchor="middle" font-size="12">winner, voter earnings</text>
+<polyline points="490,780 520,780" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="1405" y="765" width="170" height="50" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="1490" y="786" text-anchor="middle" font-size="12">escrow → winner</text>
+<text x="1490" y="801" text-anchor="middle" font-size="12">fees → voters, dev</text>
+<polyline points="1095,790 1405,790" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<line x1="20" y1="890" x2="790" y2="890" stroke-dasharray="4 4" style="stroke:var(--dg-rule)"/>
+<line x1="810" y1="890" x2="1575" y2="890" stroke-dasharray="4 4" style="stroke:var(--dg-zone-s)"/>
+<text x="20" y="916" font-size="14" font-weight="bold">C. when it stalls, and upkeep</text>
+<rect x="20" y="930" width="210" height="50" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="125" y="951" text-anchor="middle" font-weight="bold" font-size="13">Another member</text>
+<text x="125" y="967" text-anchor="middle" font-size="12">joins after time is up</text>
+<circle cx="20" cy="930" r="12" style="fill:var(--dg-ink2)"/><text x="20" y="934" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">6</text>
+<rect x="825" y="925" width="270" height="58" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="960" y="950" text-anchor="middle" font-size="12">kicks joined members who</text>
+<text x="960" y="965" text-anchor="middle" font-size="12">never voted, frees their seats</text>
+<polyline points="230,955 825,955" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="375" y="948" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">joinDispute</text>
+<rect x="520" y="995" width="250" height="58" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="645" y="1020" text-anchor="middle" font-weight="bold" font-size="13">resolveVote (admin)</text>
+<text x="645" y="1036" text-anchor="middle" font-size="12">resolveVotes(id, winner)</text>
+<circle cx="520" cy="995" r="12" style="fill:var(--dg-ink2)"/><text x="520" y="999" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">7</text>
+<rect x="825" y="995" width="270" height="70" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="960" y="1018.5" text-anchor="middle" font-weight="bold" font-size="13">resolveVotes()   onlyAdmin</text>
+<text x="960" y="1034.5" text-anchor="middle" font-size="12">escrow → chosen side</text>
+<text x="960" y="1049.5" text-anchor="middle" font-size="12">fee split to joined members</text>
+<polyline points="770,1024 825,1024" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-p2p-marketplace-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<rect x="1120" y="915" width="260" height="150" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="1250" y="941" text-anchor="middle" font-weight="bold" font-size="13">upkeep</text>
+<text x="1250" y="957" text-anchor="middle" font-size="12">3 wrong votes in 10 → locked</text>
+<text x="1250" y="972" text-anchor="middle" font-size="12">cancelDebt(amount) in RGP</text>
+<text x="1250" y="987" text-anchor="middle" font-size="12">unlocks the member</text>
+<text x="1250" y="1002" text-anchor="middle" font-size="12">unstake (looseRGPBadge) only if</text>
+<text x="1250" y="1017" text-anchor="middle" font-size="12">not in a dispute, not locked,</text>
+<text x="1250" y="1032" text-anchor="middle" font-size="12">24h after last reward</text>
+<text x="1250" y="1047" text-anchor="middle" font-size="12">owner can seize: doJustice</text>
+<circle cx="1120" cy="915" r="12" style="fill:var(--dg-ink2)"/><text x="1120" y="919" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">8</text>
+<rect x="1405" y="915" width="170" height="150" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="1490" y="956" text-anchor="middle" font-weight="bold" font-size="13">monthly rewards</text>
+<text x="1490" y="972" text-anchor="middle" font-size="12">RigelP2PRewardSystem</text>
+<text x="1490" y="987" text-anchor="middle" font-size="12">owner lists the</text>
+<text x="1490" y="1002" text-anchor="middle" font-size="12">month’s traders</text>
+<text x="1490" y="1017" text-anchor="middle" font-size="12">traders call</text>
+<text x="1490" y="1032" text-anchor="middle" font-size="12">claimForID(id)</text>
+<circle cx="1405" cy="915" r="12" style="fill:var(--dg-ink2)"/><text x="1405" y="919" text-anchor="middle" font-size="12" font-weight="bold" style="fill:var(--dg-bg)">9</text>
+<text x="20" y="1070" font-size="11.5" style="fill:var(--dg-muted)">solid = tx / call     dashed = read</text>
+</svg>

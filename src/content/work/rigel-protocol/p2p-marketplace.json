@@ -1,0 +1,11 @@
+{
+  "company": "rigel-protocol",
+  "name": "P2P marketplace",
+  "role": "",
+  "stack": "Solidity · Truffle · Node.js · Apollo GraphQL · MongoDB · React",
+  "order": 2,
+  "diagrams": [
+    { "file": "rigel-protocol/p2p-marketplace/01", "title": "A trade, from ad to release" },
+    { "file": "rigel-protocol/p2p-marketplace/02", "title": "Disputes and the council" }
+  ]
+}

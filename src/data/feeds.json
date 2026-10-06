@@ -1,0 +1,48 @@
+{
+  "feeds": [
+    {
+      "platform": "Hashnode",
+      "url": "",
+      "priority": 1
+    },
+    {
+      "platform": "Substack",
+      "url": "",
+      "priority": 2
+    },
+    {
+      "platform": "Medium",
+      "url": "https://medium.com/feed/@favoriteblockchain",
+      "sitemap": "https://favoriteblockchain.medium.com/sitemap/sitemap.xml",
+      "priority": 3
+    }
+  ],
+  "hide": [
+    "https://favoriteblockchain.medium.com/are-you-up-for-a-challenge-7e9ff16f0910",
+    "https://favoriteblockchain.medium.com/thank-you-wayne-c88c2ee4da79"
+  ],
+  "topics": [
+    {
+      "name": "Rust for Solidity Developers",
+      "title": "rust for solidity"
+    },
+    {
+      "name": "Simply Rust",
+      "title": "simply rust"
+    },
+    {
+      "name": "Smart Contract Security",
+      "title": "security|audit|exploit|attack|first flight|ethernaut|reentrancy",
+      "categories": "security|audit|exploit"
+    },
+    {
+      "name": "Rust",
+      "title": "rust",
+      "categories": "rust"
+    },
+    {
+      "name": "Solidity and the EVM",
+      "title": "solidity|evm|ethereum|calldata|gas|defi|smart contracts"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "company": "netzence",
+  "name": "KlimateRide",
+  "role": "Map lead (research & architecture) and blockchain integration",
+  "stack": "Google Maps SDK · AWS IoT MQTT, plus Ably for server → app · Redis GEO · Tile38 · OSRM · Python",
+  "order": 3,
+  "diagrams": [
+    { "file": "netzence/klimateride/01", "title": "From a trip to a carbon record" },
+    { "file": "netzence/klimateride/02", "title": "Live map architecture" },
+    { "file": "netzence/klimateride/03", "title": "Shared rides and the carbon maths" }
+  ]
+}

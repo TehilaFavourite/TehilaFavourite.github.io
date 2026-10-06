@@ -1,0 +1,92 @@
+<svg viewBox="0 0 1600 760" role="img" aria-label="Autheo node sale contracts: a UUPS central store holding roles, referrals, KYC and blacklist status, holdings caps, supported tokens, Chainlink price conversion and the tier whitelist; one ERC-721 licence contract per tier that checks the central store; and the roles that operate each part." class="dg" xmlns="http://www.w3.org/2000/svg" style="fill:var(--dg-ink)">
+<defs><marker id="ah-autheo-node-sale-platform-02" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--dg-ink2)"/></marker></defs>
+<rect width="1600" height="760" style="fill:var(--dg-bg)"/>
+<text x="150" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Roles and users</text>
+<text x="665" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">AutheoCentralStore (UUPS proxy)</text>
+<text x="1180" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Tier contracts (ERC-721)</text>
+<text x="1465" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">External</text>
+<rect x="20" y="150" width="260" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="150" y="176" text-anchor="middle" font-weight="bold" font-size="13">Super admin</text>
+<text x="150" y="192" text-anchor="middle" font-size="12">transferSuperAdmin</text>
+<text x="150" y="207" text-anchor="middle" font-size="12">updateAdminRole</text>
+<text x="150" y="222" text-anchor="middle" font-size="12">authorises upgrades</text>
+<rect x="20" y="270" width="260" height="130" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="150" y="301" text-anchor="middle" font-weight="bold" font-size="13">Admin</text>
+<text x="150" y="317" text-anchor="middle" font-size="12">KYC and blacklist</text>
+<text x="150" y="332" text-anchor="middle" font-size="12">referral codes on / off</text>
+<text x="150" y="347" text-anchor="middle" font-size="12">commission percentages</text>
+<text x="150" y="362" text-anchor="middle" font-size="12">internal accounts + cap</text>
+<text x="150" y="377" text-anchor="middle" font-size="12">tier whitelist</text>
+<rect x="20" y="430" width="260" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="150" y="456" text-anchor="middle" font-weight="bold" font-size="13">Tier admin</text>
+<text x="150" y="472" text-anchor="middle" font-size="12">on each tier contract:</text>
+<text x="150" y="487" text-anchor="middle" font-size="12">payment receiver, withdraw,</text>
+<text x="150" y="502" text-anchor="middle" font-size="12">base URI, transferAdminRole</text>
+<rect x="20" y="560" width="260" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="150" y="586" text-anchor="middle" font-weight="bold" font-size="13">Users</text>
+<text x="150" y="602" text-anchor="middle" font-size="12">KYC’d buyers mint on a tier</text>
+<text x="150" y="617" text-anchor="middle" font-size="12">referrers create codes here</text>
+<text x="150" y="632" text-anchor="middle" font-size="12">internal wallets: higher cap</text>
+<rect x="330" y="150" width="670" height="560" rx="6" stroke-width="1.2" stroke-dasharray="6 4" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<rect x="355" y="175" width="300" height="100" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="505" y="221" text-anchor="middle" font-weight="bold" font-size="13">Roles</text>
+<text x="505" y="237" text-anchor="middle" font-size="12">super admin, admins</text>
+<rect x="675" y="175" width="300" height="100" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="825" y="213.5" text-anchor="middle" font-weight="bold" font-size="13">Referrals</text>
+<text x="825" y="229.5" text-anchor="middle" font-size="12">code ↔ address, active flag</text>
+<text x="825" y="244.5" text-anchor="middle" font-size="12">referrer / referred %</text>
+<rect x="355" y="305" width="300" height="100" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="505" y="351" text-anchor="middle" font-weight="bold" font-size="13">User status</text>
+<text x="505" y="367" text-anchor="middle" font-size="12">isKYC, isBlackListed</text>
+<rect x="675" y="305" width="300" height="100" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="825" y="343.5" text-anchor="middle" font-weight="bold" font-size="13">Holdings and caps</text>
+<text x="825" y="359.5" text-anchor="middle" font-size="12">userHoldings per user</text>
+<text x="825" y="374.5" text-anchor="middle" font-size="12">per-user cap, internal cap</text>
+<rect x="355" y="435" width="300" height="100" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="505" y="481" text-anchor="middle" font-weight="bold" font-size="13">Supported tokens</text>
+<text x="505" y="497" text-anchor="middle" font-size="12">USDT, USDC by default</text>
+<rect x="675" y="435" width="300" height="100" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="825" y="481" text-anchor="middle" font-weight="bold" font-size="13">Price conversion</text>
+<text x="825" y="497" text-anchor="middle" font-size="12">token ↔ USD via Chainlink</text>
+<rect x="355" y="565" width="300" height="100" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="505" y="603.5" text-anchor="middle" font-weight="bold" font-size="13">Tier whitelist</text>
+<text x="505" y="619.5" text-anchor="middle" font-size="12">which tier contracts</text>
+<text x="505" y="634.5" text-anchor="middle" font-size="12">may sell nodes</text>
+<rect x="675" y="565" width="300" height="100" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="825" y="611" text-anchor="middle" font-weight="bold" font-size="13">Upgrades</text>
+<text x="825" y="627" text-anchor="middle" font-size="12">UUPS, super admin only</text>
+<rect x="1060" y="175" width="240" height="120" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="1180" y="208.5" text-anchor="middle" font-weight="bold" font-size="13">AutheoNodeLicense1</text>
+<text x="1180" y="224.5" text-anchor="middle" font-size="12">ERC-721 node licences</text>
+<text x="1180" y="239.5" text-anchor="middle" font-size="12">totalNodes, $100 per node</text>
+<text x="1180" y="254.5" text-anchor="middle" font-size="12">365-day transfer lock</text>
+<text x="1180" y="269.5" text-anchor="middle" font-size="12">ETH, USDC, USDT</text>
+<rect x="1060" y="325" width="240" height="60" rx="6" stroke-width="1.2" stroke-dasharray="5 3" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="1180" y="351" text-anchor="middle" font-weight="bold" font-size="13">AutheoNodeLicense2</text>
+<text x="1180" y="367" text-anchor="middle" font-size="12">same code, next tier</text>
+<rect x="1060" y="415" width="240" height="60" rx="6" stroke-width="1.2" stroke-dasharray="5 3" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="1180" y="441" text-anchor="middle" font-weight="bold" font-size="13">AutheoNodeLicenseN</text>
+<text x="1180" y="457" text-anchor="middle" font-size="12">added by whitelisting</text>
+<polyline points="1060,235 1000,235" stroke-width="1.3" marker-end="url(#ah-autheo-node-sale-platform-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="1060,355 1000,355" stroke-width="1.3" marker-end="url(#ah-autheo-node-sale-platform-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="1060,445 1000,445" stroke-width="1.3" marker-end="url(#ah-autheo-node-sale-platform-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="1030" y="228" font-size="10.5" text-anchor="middle" style="fill:var(--dg-ink2)">checks</text>
+<rect x="1350" y="175" width="230" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="1465" y="201" text-anchor="middle" font-weight="bold" font-size="13">USDC / USDT</text>
+<text x="1465" y="217" text-anchor="middle" font-size="12">transferFrom buyer</text>
+<rect x="1350" y="265" width="230" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="1465" y="291" text-anchor="middle" font-weight="bold" font-size="13">Payment receiver</text>
+<text x="1465" y="307" text-anchor="middle" font-size="12">withdraw() destination</text>
+<rect x="1350" y="455" width="230" height="60" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="1465" y="481" text-anchor="middle" font-weight="bold" font-size="13">Chainlink ETH/USD</text>
+<text x="1465" y="497" text-anchor="middle" font-size="12">ethUsdPriceFeed</text>
+<polyline points="1300,205 1350,205" stroke-width="1.3" marker-end="url(#ah-autheo-node-sale-platform-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="1300,270 1325,270 1325,295 1350,295" stroke-width="1.3" marker-end="url(#ah-autheo-node-sale-platform-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="975,485 1350,485" stroke-width="1.3" marker-end="url(#ah-autheo-node-sale-platform-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="1170" y="503" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">latestRoundData</text>
+<polyline points="280,195 330,195" stroke-width="1.3" marker-end="url(#ah-autheo-node-sale-platform-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="280,335 330,335" stroke-width="1.3" marker-end="url(#ah-autheo-node-sale-platform-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="280,605 330,605" stroke-width="1.3" marker-end="url(#ah-autheo-node-sale-platform-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="305" y="598" font-size="10" text-anchor="middle" style="fill:var(--dg-ink2)">referral</text>
+<text x="20" y="745" font-size="11.5" style="fill:var(--dg-muted)">solid = call     dashed boxes = later tiers, same contract code</text>
+</svg>

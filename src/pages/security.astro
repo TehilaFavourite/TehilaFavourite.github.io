@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import SecurityRow from '../components/SecurityRow.astro';
+import { getSecurity, securityTypes } from '../lib/content';
+
+const entries = await getSecurity();
+const totals = { critical: 0, high: 0, medium: 0, low: 0, info: 0 };
+for (const e of entries) {
+  if (!e.data.severity) continue;
+  for (const k of Object.keys(totals) as (keyof typeof totals)[]) totals[k] += e.data.severity[k];
+}
+const findings = Object.values(totals).reduce((a, b) => a + b, 0);
+---
+
+<Base title="Security" description="Smart contract audits, contest results, vulnerability write-ups and open-source security work by Favour Ajaye.">
+  <header class="page-head">
+    <p class="crumbs">Security</p>
+    <h1>Audits and security work</h1>
+    <p>
+      Contest results, audit reports, vulnerability write-ups and open-source security contributions. Private reports
+      are listed at summary level only.
+    </p>
+    <p class="meta tally tabular">
+      {entries.length} entries · {findings} findings reported · C {totals.critical} · H {totals.high} · M {totals.medium} · L {totals.low} · I {totals.info}
+    </p>
+  </header>
+
+  {
+    securityTypes.map((t, i) => {
+      const list = entries.filter((e) => e.data.type === t.type);
+      return (
+        <section class="sec" aria-labelledby={`h-${t.type}`}>
+          <SectionHead id={`h-${t.type}`} num={String(i + 1).padStart(2, '0')} title={t.name} />
+          {list.length ? (
+            <>
+              <div class="row cols label" aria-hidden="true">
+                <span class="c-2">Date</span>
+                <span class="c-6">Engagement</span>
+                <span class="c-3">Findings</span>
+                <span class="c-1 c-end">Link</span>
+              </div>
+              <ul class="rows">{list.map((e) => <SecurityRow entry={e} />)}</ul>
+            </>
+          ) : (
+            <p class="empty">{t.empty}</p>
+          )}
+        </section>
+      );
+    })
+  }
+</Base>
+
+<style>
+  .tally {
+    margin-top: 18px;
+  }
+  .cols {
+    padding-bottom: 6px;
+  }
+  .c-1 {
+    grid-column: span 1;
+  }
+  @media (max-width: 760px) {
+    .cols {
+      display: none;
+    }
+  }
+</style>

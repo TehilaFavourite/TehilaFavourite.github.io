@@ -1,0 +1,11 @@
+{
+  "company": "shape-rotator",
+  "name": "Prrr Oracle",
+  "role": "Research and smart contracts, written with one teammate",
+  "stack": "Solidity 0.8.24 · Foundry · OpenZeppelin · fixed-point maths",
+  "order": 1,
+  "diagrams": [
+    { "file": "shape-rotator/prrr-oracle/01", "title": "One reporting epoch" },
+    { "file": "shape-rotator/prrr-oracle/02", "title": "Inside the value library" }
+  ]
+}
