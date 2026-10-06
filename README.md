@@ -18,4 +18,4 @@ npm run build    # output in dist/
 - **Repos shown on /projects**: `src/data/projects.json`.
 - **Feeds and writing topics**: `src/data/feeds.json`. If a feed can't be reached at build time, articles come from `src/data/writing-fallback.json`.
 
-Set `site` in `astro.config.mjs` to the real domain before deploying. A `GITHUB_TOKEN` env var is optional and only raises the GitHub API rate limit.
+Every push to `main` builds and deploys to GitHub Pages at https://tehilafavourite.github.io. A `GITHUB_TOKEN` env var is optional and only raises the GitHub API rate limit.
