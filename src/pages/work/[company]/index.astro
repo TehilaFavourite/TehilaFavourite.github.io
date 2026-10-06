@@ -16,6 +16,7 @@ const { company: c } = Astro.props;
     <h1>{c.name}</h1>
     <p>{c.summary}</p>
     {(c.role || c.period) && <p class="meta">{[c.role, c.period].filter(Boolean).join(' · ')}</p>}
+    {c.url && <p class="meta"><a href={c.url} rel="noopener">{c.url.replace(/^https?:\/\/(www\.)?/, '')}</a></p>}
   </header>
 
   <section class="sec" aria-label="Projects">

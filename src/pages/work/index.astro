@@ -16,7 +16,7 @@ const companies = await getCompanies();
   {
     companies.map((c, i) => (
       <section class="sec" aria-labelledby={`h-${c.slug}`}>
-        <SectionHead id={`h-${c.slug}`} num={String(i + 1).padStart(2, '0')} title={c.name} href={`/work/${c.slug}`} linkText="Company" />
+        <SectionHead id={`h-${c.slug}`} num={String(i + 1).padStart(2, '0')} title={c.name} href={c.url} linkText="Website" />
         <p class="sum">
           {c.summary}
           {c.role && <span class="meta"> · {c.role}</span>}

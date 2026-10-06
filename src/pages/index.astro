@@ -61,7 +61,7 @@ const nowItems = [
       {companies.map((c) => (
         <li>
           <div class="row">
-            <p class="c-4 title"><a href={`/work/${c.slug}`}>{c.name}</a></p>
+            <p class="c-4 title">{c.url ? <a href={c.url} rel="noopener">{c.name}</a> : c.name}</p>
             <p class="c-8 projects">
               {c.projects.map((p, i) => (
                 <>
