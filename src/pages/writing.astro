@@ -15,7 +15,7 @@ const sources = Object.values(site.links).filter((l) => ['Medium', 'Hashnode', '
     <h1>Writing</h1>
     <p>
       Articles on smart contract security and Rust, including the Rust for Solidity Developers series. Each one links to
-      the original on
+      the original on{' '}
       {sources.map((s, i) => <>{i > 0 && (i === sources.length - 1 ? ' and ' : ', ')}<a href={s.url}>{s.label}</a></>)}.
     </p>
   </header>

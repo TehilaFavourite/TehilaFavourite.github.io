@@ -7,8 +7,8 @@
   --muted: #696964;
   --rule: #d2d2cb;
   --rule-strong: #151514;
-  --accent: #b5420e;
-  --accent-line: #df5719;
+  --accent: #0f7a20;
+  --accent-line: #17b42f;
 
   --sans: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
@@ -58,8 +58,8 @@
   --muted: #92918b;
   --rule: #303030;
   --rule-strong: #e8e7e2;
-  --accent: #f07c42;
-  --accent-line: #f07c42;
+  --accent: #17b42f;
+  --accent-line: #17b42f;
 
   --dg-bg: #18181a;
   --dg-ink: #e8e7e2;
