@@ -19,6 +19,28 @@ const nowItems = [
   ['Building', now.building],
   ['Reading', now.reading],
 ].filter(([, v]) => v);
+const links = ['github', 'linkedin', 'x', 'medium'].map((k) => site.links[k as keyof typeof site.links]).filter((l) => l.url);
+const stack: [string, string[]][] = [
+  ['Languages', ['Solidity', 'Rust', 'PostgreSQL', 'JavaScript', 'TypeScript', 'Yul / Assembly', 'DAML', 'Python']],
+  [
+    'Frameworks',
+    [
+      'OpenZeppelin',
+      'Hardhat',
+      'Foundry',
+      'Account Abstraction (ERC-4337)',
+      'Docker',
+      'Redis',
+      'Truffle',
+      'Chainlink',
+      'Node.js',
+      'React',
+      'Apollo GraphQL',
+      'MongoDB',
+      'web3.js',
+    ],
+  ],
+];
 ---
 
 <Base>
@@ -37,11 +59,13 @@ const nowItems = [
     <aside class="spec" aria-label="Summary">
       <dl>
         <div><dt class="label">Focus</dt><dd>EVM, smart contracts, audits, Rust, formal verification</dd></div>
-        <div><dt class="label">Languages</dt><dd>Solidity, Rust, PostgreSQL, JavaScript, TypeScript, Yul / Assembly, DAML, Python</dd></div>
-        <div><dt class="label">Frameworks</dt><dd>OpenZeppelin, Hardhat, Foundry, Account Abstraction (ERC-4337), Docker, Redis, Truffle, Chainlink, Node.js, React, Apollo GraphQL, MongoDB, web3.js</dd></div>
         <div><dt class="label">Experience</dt><dd>~5 years, production EVM systems</dd></div>
         <div><dt class="label">Based</dt><dd>{site.location}</dd></div>
         <div><dt class="label">Contact</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+        <div>
+          <dt class="label">Links</dt>
+          <dd class="links">{links.map((l) => <a href={l.url}>{l.label}</a>)}</dd>
+        </div>
       </dl>
       {nowItems.length > 0 && (
         <div class="now">
@@ -54,6 +78,15 @@ const nowItems = [
         </div>
       )}
     </aside>
+
+    <dl class="stack">
+      {stack.map(([k, items]) => (
+        <div>
+          <dt class="label">{k}</dt>
+          <dd><ul class="tags">{items.map((t) => <li>{t}</li>)}</ul></dd>
+        </div>
+      ))}
+    </dl>
   </section>
 
   <section class="sec" aria-labelledby="h-work">
@@ -112,6 +145,43 @@ const nowItems = [
   .big {
     font-size: var(--step-1);
     line-height: 1.5;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+  .stack {
+    grid-column: 1 / -1;
+    margin: 40px 0 0;
+    border-top: 1.5px solid var(--rule-strong);
+  }
+  .stack > div {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 12px;
+    padding-block: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .stack dd {
+    margin: 0;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tags li {
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    line-height: 1;
+    padding: 6px 9px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    color: var(--ink-2);
   }
   .spec {
     grid-column: span 4;
