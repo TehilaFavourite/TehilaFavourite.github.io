@@ -1,0 +1,11 @@
+{
+  "company": "rigel-protocol",
+  "name": "SmartSwap",
+  "role": "",
+  "stack": "Solidity 0.5.16 · Uniswap V2 core · React · TypeScript · BNB Smart Chain · Polygon · Oasis Emerald",
+  "order": 3,
+  "diagrams": [
+    { "file": "rigel-protocol/smartswap/01", "title": "Pools, liquidity and swaps" },
+    { "file": "rigel-protocol/smartswap/02", "title": "Contracts and what changed" }
+  ]
+}

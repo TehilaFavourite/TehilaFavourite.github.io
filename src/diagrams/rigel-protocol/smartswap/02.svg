@@ -1,0 +1,84 @@
+<svg viewBox="0 0 1600 750" role="img" aria-label="SmartSwap contracts: Uniswap V2 factory, pair and LP token with Math, UQ112x112 and SafeMath libraries; the SmartSwap change makes the protocol fee share configurable in the factory and reads it in the pair’s fee minting; around the core sit the React app, the router, the Autoswap server and deployments on BNB Smart Chain, Polygon and Oasis Emerald." class="dg" xmlns="http://www.w3.org/2000/svg" style="fill:var(--dg-ink)">
+<defs><marker id="ah-rigel-protocol-smartswap-02" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--dg-ink2)"/></marker></defs>
+<rect width="1600" height="750" style="fill:var(--dg-bg)"/>
+<text x="280" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Core contracts (this repo)</text>
+<text x="815" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">SmartSwap change vs Uniswap V2</text>
+<text x="1335" y="128" font-size="13" text-anchor="middle" style="fill:var(--dg-muted)">Around the core</text>
+<rect x="20" y="150" width="520" height="140" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="30" y="193.5" text-anchor="start" font-weight="bold" font-size="13">UniswapV2Factory</text>
+<text x="30" y="209.5" text-anchor="start" font-size="12">createPair(A, B) via CREATE2 · getPair · allPairs</text>
+<text x="30" y="224.5" text-anchor="start" font-size="12">feeTo, feeToSetter, setFeeTo, setFeeToSetter</text>
+<text x="30" y="239.5" text-anchor="start" font-size="12">+ feePercentage(), setfeePercentage(n)  (SmartSwap)</text>
+<text x="30" y="254.5" text-anchor="start" font-size="12">one pair per token pair</text>
+<rect x="20" y="320" width="520" height="160" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="30" y="366" text-anchor="start" font-weight="bold" font-size="13">UniswapV2Pair</text>
+<text x="30" y="382" text-anchor="start" font-size="12">reserve0, reserve1, blockTimestampLast</text>
+<text x="30" y="397" text-anchor="start" font-size="12">mint · burn · swap · skim · sync</text>
+<text x="30" y="412" text-anchor="start" font-size="12">price0/1CumulativeLast (TWAP)</text>
+<text x="30" y="427" text-anchor="start" font-size="12">kLast for the protocol fee</text>
+<text x="30" y="442" text-anchor="start" font-size="12">reentrancy lock, MINIMUM_LIQUIDITY = 1000</text>
+<rect x="20" y="510" width="520" height="90" rx="6" stroke-width="1.2" style="fill:var(--dg-tok-f);stroke:var(--dg-tok-s)"/>
+<text x="30" y="543.5" text-anchor="start" font-weight="bold" font-size="13">UniswapV2ERC20  (the LP token)</text>
+<text x="30" y="559.5" text-anchor="start" font-size="12">ERC-20 + permit (EIP-712 signatures)</text>
+<text x="30" y="574.5" text-anchor="start" font-size="12">inherited by every pair</text>
+<rect x="20" y="630" width="160" height="64" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="100" y="658" text-anchor="middle" font-weight="bold" font-size="13">Math</text>
+<text x="100" y="674" text-anchor="middle" font-size="12">sqrt, min</text>
+<rect x="200" y="630" width="160" height="64" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="280" y="658" text-anchor="middle" font-weight="bold" font-size="13">UQ112x112</text>
+<text x="280" y="674" text-anchor="middle" font-size="12">fixed point for TWAP</text>
+<rect x="380" y="630" width="160" height="64" rx="6" stroke-width="1.2" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="460" y="658" text-anchor="middle" font-weight="bold" font-size="13">SafeMath</text>
+<text x="460" y="674" text-anchor="middle" font-size="12">add, sub, mul</text>
+<polyline points="280,290 280,320" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-smartswap-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="290" y="309" text-anchor="start" font-size="11.5" style="fill:var(--dg-ink2)">deploys</text>
+<polyline points="280,480 280,510" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-smartswap-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="290" y="499" text-anchor="start" font-size="11.5" style="fill:var(--dg-ink2)">inherits</text>
+<rect x="580" y="150" width="470" height="120" rx="0" stroke-width="1.2" style="fill:var(--dg-note-f);stroke:var(--dg-note-s)"/>
+<text x="590" y="191" text-anchor="start" font-weight="bold" font-size="13">UniswapV2Factory</text>
+<text x="590" y="207" text-anchor="start" font-size="12">uint private feeForPercentage = 5</text>
+<text x="590" y="222" text-anchor="start" font-size="12">feePercentage() view</text>
+<text x="590" y="237" text-anchor="start" font-size="12">setfeePercentage(n): feeToSetter only</text>
+<rect x="580" y="290" width="470" height="120" rx="0" stroke-width="1.2" style="fill:var(--dg-note-f);stroke:var(--dg-note-s)"/>
+<text x="590" y="331" text-anchor="start" font-weight="bold" font-size="13">UniswapV2Pair._mintFee</text>
+<text x="590" y="347" text-anchor="start" font-size="12">denominator was:  rootK × 5 + rootKLast</text>
+<text x="590" y="362" text-anchor="start" font-size="12">now:  rootK × feePercentage + rootKLast</text>
+<text x="590" y="377" text-anchor="start" font-size="12">protocol share of fee growth = 1 / (n + 1)</text>
+<rect x="580" y="445" width="470" height="60" rx="0" stroke-width="1.2" style="fill:var(--dg-note-f);stroke:var(--dg-note-s)"/>
+<text x="590" y="471" text-anchor="start" font-weight="bold" font-size="13">IUniswapV2Factory</text>
+<text x="590" y="487" text-anchor="start" font-size="12">+ feePercentage()</text>
+<rect x="580" y="520" width="470" height="174" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-user-s)"/>
+<text x="590" y="565.5" text-anchor="start" font-weight="bold" font-size="13">what n does</text>
+<text x="590" y="581.5" text-anchor="start" font-size="12">n = 5  →  1/6 to the protocol (Uniswap default)</text>
+<text x="590" y="596.5" text-anchor="start" font-size="12">n = 3  →  1/4</text>
+<text x="590" y="611.5" text-anchor="start" font-size="12">n = 1  →  1/2</text>
+<text x="590" y="626.5" text-anchor="start" font-size="12"></text>
+<text x="590" y="641.5" text-anchor="start" font-size="12">swap fee itself is unchanged: 0.3%</text>
+<text x="590" y="656.5" text-anchor="start" font-size="12">all of it goes to LPs unless feeTo is set</text>
+<rect x="1090" y="150" width="490" height="100" rx="6" stroke-width="1.2" style="fill:var(--dg-web-f);stroke:var(--dg-web-s)"/>
+<text x="1100" y="181" text-anchor="start" font-weight="bold" font-size="13">SmartSwap app (SmartswapDappV2)</text>
+<text x="1100" y="197" text-anchor="start" font-size="12">React, TypeScript, Chakra UI</text>
+<text x="1100" y="212" text-anchor="start" font-size="12">swap, liquidity, farming, NFT, SmartBid</text>
+<text x="1100" y="227" text-anchor="start" font-size="12">calls the router on each chain</text>
+<rect x="1090" y="280" width="490" height="84" rx="6" stroke-width="1.2" stroke-dasharray="5 3" style="fill:var(--dg-chain-f);stroke:var(--dg-chain-s)"/>
+<text x="1100" y="310.5" text-anchor="start" font-weight="bold" font-size="13">Router (periphery)</text>
+<text x="1100" y="326.5" text-anchor="start" font-size="12">swapExact… / addLiquidity… / removeLiquidity…</text>
+<text x="1100" y="341.5" text-anchor="start" font-size="12">fee-on-transfer and permit variants</text>
+<rect x="1090" y="394" width="490" height="84" rx="6" stroke-width="1.2" style="fill:var(--dg-api-f);stroke:var(--dg-api-s)"/>
+<text x="1100" y="424.5" text-anchor="start" font-weight="bold" font-size="13">Autoswap server</text>
+<text x="1100" y="440.5" text-anchor="start" font-size="12">Express, MongoDB, node-cron</text>
+<text x="1100" y="455.5" text-anchor="start" font-size="12">scheduled and instant swaps for users</text>
+<rect x="1090" y="508" width="490" height="186" rx="6" stroke-width="1.2" style="fill:var(--dg-user-f);stroke:var(--dg-ext-s)"/>
+<text x="1100" y="559.5" text-anchor="start" font-weight="bold" font-size="13">Deployments (from the app’s address list)</text>
+<text x="1100" y="575.5" text-anchor="start" font-size="12">BNB Smart Chain  ·  29 pairs</text>
+<text x="1100" y="590.5" text-anchor="start" font-size="12">Polygon  ·  10 pairs</text>
+<text x="1100" y="605.5" text-anchor="start" font-size="12">Oasis Emerald  ·  3 pairs</text>
+<text x="1100" y="620.5" text-anchor="start" font-size="12">testnets: BSC testnet, Mumbai, Ropsten,</text>
+<text x="1100" y="635.5" text-anchor="start" font-size="12">Oasis testnet, Avalanche Fuji</text>
+<text x="1100" y="650.5" text-anchor="start" font-size="12">pair counts read from the factories, Oct 2026</text>
+<polyline points="1335,250 1335,280" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-smartswap-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="1335,394 1335,364" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-smartswap-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<polyline points="1090,345 1070,345 1070,425 540,425" stroke-width="1.3" marker-end="url(#ah-rigel-protocol-smartswap-02)" style="fill:none;stroke:var(--dg-ink2)"/>
+<text x="815" y="440" text-anchor="middle" font-size="11.5" style="fill:var(--dg-ink2)">createPair · swap · mint · burn</text>
+<text x="20" y="735" font-size="11.5" style="fill:var(--dg-muted)">solid = call  ·  dashed box = deployed but not in this repo  ·  sticky notes = lines changed from Uniswap V2</text>
+</svg>
